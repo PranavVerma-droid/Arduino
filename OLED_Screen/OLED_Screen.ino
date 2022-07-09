@@ -36,10 +36,16 @@ void loop() {
   display.setCursor(0,0);
   display.print("LED_STATUS: ");
   display.setTextSize(3);
-  display.setCursor(0,20);
+  display.setCursor(0,10);
   display.print("OFF");
   display.setTextSize(1);
-
+  display.setCursor(0,33);
+  display.print("Made by Pranav Verma!");
+  display.setCursor(0,43);
+  display.print("Username on Github: ");
+  display.setCursor(0,53);
+  display.print("PranavVerma-droid XD");
+  display.setTextColor(WHITE);
   display.display();
   delay(500);
   
@@ -51,10 +57,16 @@ void loop() {
   display.setCursor(0,0);
   display.print("LED_STATUS: ");
   display.setTextSize(3);
-  display.setCursor(0,20);
+  display.setCursor(0,10);
   display.print("ON");
   display.setTextSize(1);
-  
+  display.setCursor(0,33);
+  display.print("Made by Pranav Verma!");
+  display.setCursor(0,43);
+  display.print("Username on Github: ");
+  display.setCursor(0,53);
+  display.print("PranavVerma-droid XD");
+  display.setTextColor(WHITE);
 
   display.display();
   delay(500);
