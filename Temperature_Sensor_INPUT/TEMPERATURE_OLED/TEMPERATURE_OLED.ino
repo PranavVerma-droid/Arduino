@@ -3,14 +3,21 @@
 #include <Adafruit_Sensor.h>
 #define SCREEN_WIDTH 128 // OLED display width, in pixels
 #define SCREEN_HEIGHT 64 // OLED display height, in pixels
-
-float h = 0;
-float t = 0;
-
-// Declaration for an SSD1306 display connected to I2C (SDA, SCL pins)
 //SCK PIN -> D1
 //SDA PIN -> D2
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
+
+#include "DHT.h"
+#define DHTPIN 14     // Digital pin connected to the DHT sensor (D5)
+// - DHT Sensor Library: https://github.com/adafruit/DHT-sensor-library
+// - Adafruit Unified Sensor Lib: https://github.com/adafruit/Adafruit_Sensor
+#define DHTTYPE DHT11   // DHT 11
+//#define DHTTYPE DHT22   // DHT 22  (AM2302), AM2321
+//#define DHTTYPE DHT21   // DHT 21 (AM2301)
+DHT dht(DHTPIN, DHTTYPE);
+
+int led = 12;
+
 
 
 void setup() {
@@ -24,52 +31,41 @@ void setup() {
   display.clearDisplay();
   display.setTextColor(WHITE);
 
-  pinMode(LED_BUILTIN, OUTPUT);
+  pinMode(led, OUTPUT);
+
+  Serial.println(F("DHTxx test!"));
+  dht.begin();
 
 }
 
 void loop() {
+float  h = dht.readHumidity();
+float  t = dht.readTemperature();
+
+digitalWrite(led, HIGH);
+    
   display.clearDisplay();
   
   
-  digitalWrite(LED_BUILTIN, HIGH);
   display.setTextSize(1);
   display.setCursor(0,0);
-  display.print("LED_STATUS: ");
+  display.print("Current Temperature: ");
   display.setTextSize(3);
   display.setCursor(0,10);
-  display.print("OFF");
+  display.print(t);
   display.setTextSize(1);
+
+
+  
+  
   display.setCursor(0,33);
   display.print("Made by Pranav Verma!");
   display.setCursor(0,43);
   display.print("Username on Github: ");
   display.setCursor(0,53);
-  display.print("PranavVerma-droid XD");
-  display.setTextColor(WHITE);
+  display.print("PranavVerma-droid");
   display.display();
-  delay(500);
-  
-  
+  delay(1000);
 
-  display.clearDisplay();
-  digitalWrite(LED_BUILTIN, LOW);
-  display.setTextSize(1);
-  display.setCursor(0,0);
-  display.print("LED_STATUS: ");
-  display.setTextSize(3);
-  display.setCursor(0,10);
-  display.print("ON");
-  display.setTextSize(1);
-  display.setCursor(0,33);
-  display.print("Made by Pranav Verma!");
-  display.setCursor(0,43);
-  display.print("Username on Github: ");
-  display.setCursor(0,53);
-  display.print("PranavVerma-droid XD");
-  display.setTextColor(WHITE);
-
-  display.display();
-  delay(500);
 
 }
