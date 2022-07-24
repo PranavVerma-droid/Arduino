@@ -9,6 +9,11 @@
 //SDA PIN -> D2
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
 
+// 'index(2)', 10x10px
+const unsigned char myBitmap [] PROGMEM = {
+  0xfb, 0xc0, 0xc0, 0xc0, 0x92, 0x40, 0x9e, 0x40, 0x9e, 0x00, 0x8e, 0x00, 0x9c, 0x40, 0x8c, 0x40, 
+  0xc0, 0xc0, 0xfb, 0xc0
+};
 
 void setup() {
 
@@ -42,7 +47,8 @@ void loop() {
   display.setCursor(0,43);
   display.print("Username on Github: ");
   display.setCursor(0,53);
-  display.print("PranavVerma-droid XD");
+  display.print("PranavVerma-droid");
+  display.drawBitmap(105, 53, myBitmap, 10, 10, WHITE);
   display.setTextColor(WHITE);
   display.display();
   delay(500);
@@ -63,7 +69,8 @@ void loop() {
   display.setCursor(0,43);
   display.print("Username on Github: ");
   display.setCursor(0,53);
-  display.print("PranavVerma-droid XD");
+  display.print("PranavVerma-droid");
+  display.drawBitmap(105, 53, myBitmap, 10, 10, WHITE);
   display.setTextColor(WHITE);
 
   display.display();
