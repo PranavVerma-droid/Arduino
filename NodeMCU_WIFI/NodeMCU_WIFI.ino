@@ -17,6 +17,7 @@ String output4State = "off";
 // Assign output variables to GPIO pins
 const int output5 = 5;
 const int output4 = 4;
+//G
 
 // Current time
 unsigned long currentTime = millis();
