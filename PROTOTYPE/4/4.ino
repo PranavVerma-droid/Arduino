@@ -1,6 +1,6 @@
 
 int x = 0;
-
+int y = 0;
 #include <ESP8266WiFi.h>
 #include "ESPAsyncWebServer.h"
 
@@ -21,14 +21,23 @@ AsyncWebServer server(80);
 
 
 void loop(){
+  delay(500);
   x = digitalRead(5);
   Serial.println(x);
+  if(x == HIGH) {
+    y = 1;
+    } else {
+      y = 0;
+      }
+  }
 
-
-}
+//}
 
 String readTemp() {
   return String(x);
+}
+String readTemp2() {
+  return String(y);
 }
 
 
@@ -51,8 +60,11 @@ void setup(){
 
       server.on("/irstatus", HTTP_GET, [](AsyncWebServerRequest *request){
     request->send_P(200, "text/plain", readTemp().c_str());
-  });
 
+  });
+    server.on("/light", HTTP_GET, [](AsyncWebServerRequest *request){
+    request->send_P(200, "text/plain", readTemp2().c_str());
+    });
   server.begin();
 
   

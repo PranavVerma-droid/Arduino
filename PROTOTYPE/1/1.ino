@@ -10,6 +10,7 @@ const char* password = "112345678";
 
 //Your IP address or domain name with URL path
 const char* serverNameTemp = "http://192.168.4.1/irstatus";
+const char* serverNameTemp2 = "http://192.168.4.1/light";
 
 
 #include <Wire.h>
@@ -22,6 +23,7 @@ const char* serverNameTemp = "http://192.168.4.1/irstatus";
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
 
 String irstatus;
+
 
 
 unsigned long previousMillis = 0;
@@ -48,29 +50,42 @@ void setup() {
   }
   Serial.println("");
   Serial.println("Connected to WiFi");
+  pinMode(14,OUTPUT);
 }
 
 void loop() {
+
   unsigned long currentMillis = millis();
-  
+
   if(currentMillis - previousMillis >= interval) {
      // Check WiFi connection status
     if ((WiFiMulti.run() == WL_CONNECTED)) {
       irstatus = httpGETRequest(serverNameTemp);
+
       
       display.clearDisplay();
       
 
-      display.setTextSize(2);
+      display.setTextSize(1);
       display.setCursor(0,0);
+      display.print("IR STATUS: ");
+      display.setCursor(0,10);
+      display.setTextSize(3);
+      display.println(irstatus);
+      display.setTextSize(1);
+      display.setCursor(0,40);
+      display.println("0 for OFF");
+      display.setCursor(0,50);
+      display.println("1 for ON");
       
-      display.print(irstatus);
+
 
 
       
 
            
       display.display();
+
       
       // save the last HTTP GET Request
       previousMillis = currentMillis;
@@ -79,6 +94,7 @@ void loop() {
       Serial.println("WiFi Disconnected");
     }
   }
+
 }
 
 String httpGETRequest(const char* serverName) {
@@ -106,4 +122,6 @@ String httpGETRequest(const char* serverName) {
   http.end();
 
   return payload;
+      
+
 }
