@@ -3,7 +3,9 @@ int motor1pin2 = 3;
 int motor2pin1 = 4;
 int motor2pin2 = 5;
 
-//LOL
+//Go to 
+//https://github.com/PranavVerma-droid/Arduino-IDE-Repo/blob/main/FASTEST_LINE_FOLLOWER/Plan%20till%20Mon%2C%20Aug%208th%202022%20(1).pdf
+//to see the plan
 
 void setup() {
   pinMode(motor1pin1, OUTPUT);
