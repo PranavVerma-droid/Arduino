@@ -40,7 +40,7 @@ void loop() {
   display.print("LED_STATUS: ");
   display.setTextSize(3);
   display.setCursor(0,10);
-  display.print("OFF");
+  display.print("ON");
   display.setTextSize(1);
   display.setCursor(0,33);
   display.print("Made by Pranav Verma!");
@@ -62,7 +62,7 @@ void loop() {
   display.print("LED_STATUS: ");
   display.setTextSize(3);
   display.setCursor(0,10);
-  display.print("ON");
+  display.print("OFF");
   display.setTextSize(1);
   display.setCursor(0,33);
   display.print("Made by Pranav Verma!");
