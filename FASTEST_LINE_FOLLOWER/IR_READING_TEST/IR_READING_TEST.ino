@@ -17,7 +17,7 @@ void setup() {
     pinMode(s4, INPUT);
     pinMode(s5, INPUT);
   
-
+    Serial.begin(9600);
 }
 
 
