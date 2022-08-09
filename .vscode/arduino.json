@@ -1,5 +1,6 @@
 {
-    "board": "arduino:avr:uno",
-    "port": "COM13",
-    "sketch": "BASIC_SERIAL\\BASIC_SERIAL.ino"
+    "board": "arduino:avr:mega",
+    "port": "COM19",
+    "sketch": "BASIC_SERIAL\\BASIC_SERIAL.ino",
+    "configuration": "cpu=atmega2560"
 }

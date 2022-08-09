@@ -1,8 +1,8 @@
 const int s1 = A1;
-const int s2 = A1;
-const int s3 = A1;
-const int s4 = A1;
-const int s5 = A1;
+const int s2 = A2;
+const int s3 = A3;
+const int s4 = A4;
+const int s5 = A5;
 
 int colors1 = 0;
 int colors2 = 0;
