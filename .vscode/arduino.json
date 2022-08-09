@@ -1,6 +1,6 @@
 {
     "board": "arduino:avr:mega",
     "port": "COM19",
-    "sketch": "BASIC_SERIAL\\BASIC_SERIAL.ino",
+    "sketch": "FASTEST_LINE_FOLLOWER\\IR_READING_TEST\\IR_READING_TEST.ino",
     "configuration": "cpu=atmega2560"
 }
