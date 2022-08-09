@@ -34,7 +34,7 @@ void Right() {
 void loop() {
   digitalWrite(motor1pin1, HIGH);
   digitalWrite(motor1pin2, LOW);
-  digitalWrite(motor1pin1, HIGH);
-  digitalWrite(motor1pin1, LOW);
+  digitalWrite(motor2pin1, HIGH);
+  digitalWrite(motor2pin2, LOW);
 
 }
