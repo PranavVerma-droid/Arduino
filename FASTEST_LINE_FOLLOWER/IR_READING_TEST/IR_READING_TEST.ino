@@ -29,13 +29,21 @@ void loop() {
     colors4 = analogRead(s4);
     colors5 = analogRead(s5);
 
-
+    Serial.print("Most Right Sensor: ");
+    Serial.println(colors5);
+    Serial.println("");
     Serial.print("Right Sensor: ");
     Serial.print(colors4);
-    
+    Serial.println("");
     Serial.print("Middle Sensor: ");
     Serial.println(colors3);
-    
-    Serial.print("Left Sensor");
+    Serial.println("");
+    Serial.print("Left Sensor: ");
     Serial.print(colors2);
+    Serial.println("");
+    Serial.print("Most Left Sensor: ");
+    Serial.println(colors1);
+    Serial.println("");
+
+    delay(1000);
 }
