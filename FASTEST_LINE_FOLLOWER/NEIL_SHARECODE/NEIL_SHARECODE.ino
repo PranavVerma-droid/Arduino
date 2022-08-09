@@ -14,27 +14,36 @@ void setup() {
 
 }
 
-void Forward() {
-
+void forward() {
+  digitalWrite(motor1pin1, LOW);
+  digitalWrite(motor1pin2, HIGH);
+  digitalWrite(motor2pin1, LOW);
+  digitalWrite(motor2pin2, HIGH);
   
   }
-void Backward() {
-  
-  
-  }
-void Left() {
-  
-  
-  }
-void Right() {
-  
-  
-  }
-
-void loop() {
+void backward() {
   digitalWrite(motor1pin1, HIGH);
   digitalWrite(motor1pin2, LOW);
   digitalWrite(motor2pin1, HIGH);
   digitalWrite(motor2pin2, LOW);
+
+  }
+void left() {
+  digitalWrite(motor1pin1, HIGH);
+  digitalWrite(motor1pin2, LOW);
+  digitalWrite(motor2pin1, LOW);
+  digitalWrite(motor2pin2, HIGH);  
+  
+  }
+void right() {
+  digitalWrite(motor1pin1, LOW);
+  digitalWrite(motor1pin2, HIGH);
+  digitalWrite(motor2pin1, HIGH);
+  digitalWrite(motor2pin2, LOW);
+  
+  }
+
+void loop() {
+  
 
 }
