@@ -1,5 +1,6 @@
 {
-    "board": "arduino:avr:uno",
-    "port": "COM20",
-    "sketch": "Blink\\Blink.ino"
+    "board": "arduino:avr:mega",
+    "port": "COM19",
+    "sketch": "Blink\\Blink.ino",
+    "configuration": "cpu=atmega2560"
 }
