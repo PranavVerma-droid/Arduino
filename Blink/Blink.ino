@@ -20,6 +20,4 @@ void loop() {
   Serial.println("LED TURNED OFF");
   Serial.println("");
   delay(1000);  
-  //lol             
-  //LOL         // wait for a second
 }
