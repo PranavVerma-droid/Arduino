@@ -60,7 +60,7 @@ void loop(){
 
             
             
-            /*
+            
             client.println("<html>");
             client.println("<head>");
             client.println("<title>Pranav's Web Server</title>");
@@ -68,7 +68,7 @@ void loop(){
             client.println("</head><body bgcolor="#00FF00">");
             client.println("<p><center>Hey! This is my server! Get out!</center></p>");
             client.println("</body></html>");
-            */
+            
             
 
             break;
