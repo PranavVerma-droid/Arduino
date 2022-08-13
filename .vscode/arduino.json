@@ -1,5 +1,6 @@
 {
-    "board": "arduino:avr:uno",
-    "port": "COM25",
-    "sketch": "Blink\\Blink.ino"
+    "board": "esp32:esp32:esp32cam",
+    "port": "COM7",
+    "sketch": "ESP32_CAM.ino\\ESP32_CAM.ino",
+    "configuration": "CPUFreq=240,FlashMode=qio,FlashFreq=80"
 }
