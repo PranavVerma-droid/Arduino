@@ -1,6 +1,6 @@
 {
     "board": "esp32:esp32:esp32cam",
-    "port": "COM7",
+    "port": "COM26",
     "sketch": "ESP32_CAM.ino\\ESP32_CAM.ino",
     "configuration": "CPUFreq=240,FlashMode=qio,FlashFreq=80"
 }
