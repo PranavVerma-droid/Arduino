@@ -107,7 +107,7 @@ void setup() {
   pictureNumber = EEPROM.read(0) + 1;
 
   // Path where new picture will be saved in SD Card
-  String path = "/picture" + String(pictureNumber) +".jpg";
+  String path = "/pranavcamerapicture" + String(pictureNumber) +".jpg";
 
   fs::FS &fs = SD_MMC; 
   Serial.printf("Picture file name: %s\n", path.c_str());
