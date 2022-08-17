@@ -1,22 +1,21 @@
-const int led = 49;
+int led = 43;
 
 void setup() {
   pinMode(LED_BUILTIN, OUTPUT);
-  pinMode(led, OUTPUT);
-  Serial.begin(9600);
+  pinMode(led, OUTPUT)
 }
-
+  
 
 void loop() {
-  digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
-  digitalWrite(led, HIGH);
-  Serial.println("LED TURNED ON");
-  Serial.println("");
-  delay(2000);                       // wait for a second
+  digitalWrite(led,HIGH);
+  digitalWrite(LED_BUILTIN, HIGH);
 
-  digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
-  digitalWrite(led, LOW);
-  Serial.println("LED TURNED OFF");
-  Serial.println("");
-  delay(250);  
+  delay(1000);
+
+  digitalWrite(led,LOW);
+  digitalWrite(LED_BUILTIN,LOW);
+
+  delay(1000);
+
+
 }
