@@ -1,5 +1,6 @@
 {
-    "board": "arduino:avr:uno",
-    "port": "COM3",
-    "sketch": "blink.ino"
+    "board": "arduino:avr:nano",
+    "port": "COM6",
+    "sketch": "Blink\\Blink.ino",
+    "configuration": "cpu=atmega328old"
 }
