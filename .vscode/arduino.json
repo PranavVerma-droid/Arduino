@@ -1,6 +1,5 @@
 {
-    "board": "arduino:avr:nano",
-    "port": "COM6",
-    "sketch": "Blink\\Blink.ino",
-    "configuration": "cpu=atmega328old"
+    "board": "arduino:avr:uno",
+    "port": "COM7",
+    "sketch": "LASER_LDR_SENSOR\\LASER_LDR_SENSOR.ino"
 }

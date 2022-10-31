@@ -1,6 +1,6 @@
 int laserinput = A0;
 int x = 0;
-int buzzerpin = 8;
+int buzzerpin = 3;
 
 int relaypin = 12;
 
@@ -20,9 +20,10 @@ void loop() {
   Serial.println(x);
   //delay(1000);
 
-  if(x <= 100) {
+  if(x <= 200) {
     buzzer = true;
     }
+  
   if(buzzer == true) {
     digitalWrite(buzzerpin, HIGH);
     delay(1000);
