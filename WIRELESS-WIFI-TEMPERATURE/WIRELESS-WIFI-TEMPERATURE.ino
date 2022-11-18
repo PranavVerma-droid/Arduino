@@ -35,19 +35,13 @@ void setup() {
 void loop() {
   
   delay(2000);
-
-
   float h = dht.readHumidity();
-
   float t = dht.readTemperature();
   float f = dht.readTemperature(true);
-
-  
   if (isnan(h) || isnan(t) || isnan(f)) {
     Serial.println(F("Failed to read from DHT sensor!"));
     return;
   }
-
 
 
   float hif = dht.computeHeatIndex(f, h);
@@ -85,26 +79,18 @@ void loop() {
             client.println("Connection: close");
             client.println();
             
-           
-
-
-
-            
-            
-            
             client.println("<html>");
             client.println("<head>");
             client.println("<title>Pranav's Web Server</title>");
             client.println("<h1><b><u><center>Pranav's Web Server</center></b></u></h1>");
             client.println("</head><body>");
-            client.print("<p><center>The Current Temperature is:");
+            client.print("<p><center>The Current Temperature is: ");
             client.print(t);
             client.println(" C</p></center>");
-            
-            
+            client.print("<p><center>The Current Humidity is: ");
+            client.print(h);
+            client.println("</p></center>");
             client.println("</body></html>");
-            
-            
 
             break;
           } else { 

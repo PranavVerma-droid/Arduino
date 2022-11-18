@@ -54,13 +54,6 @@ void loop(){
             client.println("Connection: close");
             client.println();
             
-            //Type your HTML Code HERE:
-
-
-
-            
-            
-            
             client.println("<html>");
             client.println("<head>");
             client.println("<title>Pranav's Web Server</title>");
@@ -68,8 +61,6 @@ void loop(){
             client.println("</head><body>");
             client.println("<p><center>Hey! This is my server! Get out!</center></p>");
             client.println("</body></html>");
-            
-            
 
             break;
           } else { // if you got a newline, then clear currentLine
