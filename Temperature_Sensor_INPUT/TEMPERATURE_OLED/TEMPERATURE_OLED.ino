@@ -8,7 +8,7 @@
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
 
 #include "DHT.h"
-#define DHTPIN 14     // Digital pin connected to the DHT sensor (D5)
+#define DHTPIN 9    // Digital pin connected to the DHT sensor (D5)
 // - DHT Sensor Library: https://github.com/adafruit/DHT-sensor-library
 // - Adafruit Unified Sensor Lib: https://github.com/adafruit/Adafruit_Sensor
 #define DHTTYPE DHT11   // DHT 11

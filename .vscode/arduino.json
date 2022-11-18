@@ -1,5 +1,6 @@
 {
-    "board": "arduino:avr:uno",
-    "port": "COM7",
-    "sketch": "LASER_LDR_SENSOR\\LASER_LDR_SENSOR.ino"
+    "board": "arduino:avr:pro",
+    "port": "COM3",
+    "sketch": "Temperature_Sensor_INPUT\\TEMPERATURE_OLED\\TEMPERATURE_OLED.ino",
+    "configuration": "cpu=8MHzatmega328"
 }

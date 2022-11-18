@@ -1,111 +1,165 @@
+#include <Arduino.h>
 #include <ESP8266WiFi.h>
-#include <ESP8266WebServer.h>
-#include "DHT.h"
-#define DHTPIN 14    
+#include <Hash.h>
+#include <ESPAsyncTCP.h>
+#include <ESPAsyncWebServer.h>
+#include <Adafruit_Sensor.h>
+#include <DHT.h>
 
-const char* ssid = "Pranav's Web Project";  // Enter SSID here
-const char* password = "12345678";  //Enter Password here
+const char* ssid     = "ESP8266-Access-Point";
+const char* password = "123456789";
 
-#define DHTTYPE DHT11   // DHT 11
-//#define DHTTYPE DHT22   // DHT 22  (AM2302), AM2321
-//#define DHTTYPE DHT21   // DHT 21 (AM2301)
+#define DHTPIN 5     // Digital pin connected to the DHT sensor
+
+// Uncomment the type of sensor in use:
+//#define DHTTYPE    DHT11     // DHT 11
+#define DHTTYPE    DHT22     // DHT 22 (AM2302)
+//#define DHTTYPE    DHT21     // DHT 21 (AM2301)
 
 DHT dht(DHTPIN, DHTTYPE);
 
-IPAddress local_ip(192,168,1,1);
-IPAddress gateway(192,168,1,1);
-IPAddress subnet(255,255,255,0);
+// current temperature & humidity, updated in loop()
+float t = 0.0;
+float h = 0.0;
 
-ESP8266WebServer server(80);
+// Create AsyncWebServer object on port 80
+AsyncWebServer server(80);
 
-void setup() {
-  Serial.begin(9600);
-  Serial.println(F("DHTxx test!"));
+// Generally, you should use "unsigned long" for variables that hold time
+// The value will quickly become too large for an int to store
+unsigned long previousMillis = 0;    // will store last time DHT was updated
 
-  dht.begin();
+// Updates DHT readings every 10 seconds
+const long interval = 10000;  
 
-  WiFi.softAP(ssid, password);
-  WiFi.softAPConfig(local_ip, gateway, subnet);
-  delay(100);
+const char index_html[] PROGMEM = R"rawliteral(
+<!DOCTYPE HTML><html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    html {
+     font-family: Arial;
+     display: inline-block;
+     margin: 0px auto;
+     text-align: center;
+    }
+    h2 { font-size: 3.0rem; }
+    p { font-size: 3.0rem; }
+    .units { font-size: 1.2rem; }
+    .dht-labels{
+      font-size: 1.5rem;
+      vertical-align:middle;
+      padding-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <h2>ESP8266 DHT Server</h2>
+  <p>
+    <span class="dht-labels">Temperature</span> 
+    <span id="temperature">%TEMPERATURE%</span>
+    <sup class="units">&deg;C</sup>
+  </p>
+  <p>
+    <span class="dht-labels">Humidity</span>
+    <span id="humidity">%HUMIDITY%</span>
+    <sup class="units">%</sup>
+  </p>
+</body>
+<script>
+setInterval(function ( ) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("temperature").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "/temperature", true);
+  xhttp.send();
+}, 10000 ) ;
 
-  server.begin();
-  Serial.println("HTTP server started");
+setInterval(function ( ) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("humidity").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "/humidity", true);
+  xhttp.send();
+}, 10000 ) ;
+</script>
+</html>)rawliteral";
+
+// Replaces placeholder with DHT values
+String processor(const String& var){
+  //Serial.println(var);
+  if(var == "TEMPERATURE"){
+    return String(t);
+  }
+  else if(var == "HUMIDITY"){
+    return String(h);
+  }
+  return String();
 }
 
-void loop() {
+void setup(){
+  // Serial port for debugging purposes
+  Serial.begin(115200);
+  dht.begin();
   
-  delay(2000);
-  float h = dht.readHumidity();
-  float t = dht.readTemperature();
-  float f = dht.readTemperature(true);
-  if (isnan(h) || isnan(t) || isnan(f)) {
-    Serial.println(F("Failed to read from DHT sensor!"));
-    return;
-  }
+  Serial.print("Setting AP (Access Point)…");
+  // Remove the password parameter, if you want the AP (Access Point) to be open
+  WiFi.softAP(ssid, password);
 
+  IPAddress IP = WiFi.softAPIP();
+  Serial.print("AP IP address: ");
+  Serial.println(IP);
 
-  float hif = dht.computeHeatIndex(f, h);
-  float hic = dht.computeHeatIndex(t, h, false);
+  // Print ESP8266 Local IP Address
+  Serial.println(WiFi.localIP());
 
-  /*Serial.print(F(" Humidity: "));
-  Serial.print(h);
-  Serial.print(F("%  Temperature: "));
-  Serial.print(t);
-  Serial.print(F("C "));
-  Serial.print(f);
-  Serial.print(F("F  Heat index: "));
-  Serial.print(hic);
-  Serial.print(F("C "));
-  Serial.print(hif);
-  Serial.println(F("F"));*/
+  // Route for root / web page
+  server.on("/", HTTP_GET, [](AsyncWebServerRequest *request){
+    request->send_P(200, "text/html", index_html, processor);
+  });
+  server.on("/temperature", HTTP_GET, [](AsyncWebServerRequest *request){
+    request->send_P(200, "text/plain", String(t).c_str());
+  });
+  server.on("/humidity", HTTP_GET, [](AsyncWebServerRequest *request){
+    request->send_P(200, "text/plain", String(h).c_str());
+  });
 
-  WiFiClient client = server.available();
-
-  if (client) {                             
-    Serial.println("New Client.");         
-    String currentLine = "";                
-    currentTime = millis();
-    previousTime = currentTime;
-    while (client.connected() && currentTime - previousTime <= timeoutTime) { 
-      currentTime = millis();         
-      if (client.available()) {             
-        char c = client.read();             
-        Serial.write(c);                    
-        header += c;
-        if (c == '\n') {                    
-          if (currentLine.length() == 0) {
-            client.println("HTTP/1.1 200 OK");
-            client.println("Content-type:text/html");
-            client.println("Connection: close");
-            client.println();
-            
-            client.println("<html>");
-            client.println("<head>");
-            client.println("<title>Pranav's Web Server</title>");
-            client.println("<h1><b><u><center>Pranav's Web Server</center></b></u></h1>");
-            client.println("</head><body>");
-            client.print("<p><center>The Current Temperature is: ");
-            client.print(t);
-            client.println(" C</p></center>");
-            client.print("<p><center>The Current Humidity is: ");
-            client.print(h);
-            client.println("</p></center>");
-            client.println("</body></html>");
-
-            break;
-          } else { 
-            currentLine = "";
-          }
-        } else if (c != '\r') {  
-          currentLine += c;      
-        }
-      }
+  // Start server
+  server.begin();
+}
+ 
+void loop(){  
+  unsigned long currentMillis = millis();
+  if (currentMillis - previousMillis >= interval) {
+    // save the last time you updated the DHT values
+    previousMillis = currentMillis;
+    // Read temperature as Celsius (the default)
+    float newT = dht.readTemperature();
+    // Read temperature as Fahrenheit (isFahrenheit = true)
+    //float newT = dht.readTemperature(true);
+    // if temperature read failed, don't change t value
+    if (isnan(newT)) {
+      Serial.println("Failed to read from DHT sensor!");
     }
-    
-    header = "";
-    
-    client.stop();
-    Serial.println("Client disconnected.");
-    Serial.println("");
+    else {
+      t = newT;
+      Serial.println(t);
+    }
+    // Read Humidity
+    float newH = dht.readHumidity();
+    // if humidity read failed, don't change h value 
+    if (isnan(newH)) {
+      Serial.println("Failed to read from DHT sensor!");
+    }
+    else {
+      h = newH;
+      Serial.println(h);
+    }
   }
 }
