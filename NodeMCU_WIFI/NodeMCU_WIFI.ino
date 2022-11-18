@@ -1,7 +1,7 @@
 #include <ESP8266WiFi.h>
 
 // Replace with your network credentials
-const char* ssid     = "Airtel Lockdown";
+const char* ssid     = "Pranav Outsider";
 const char* password = "112345678";
 
 // Set web server port number to 80
