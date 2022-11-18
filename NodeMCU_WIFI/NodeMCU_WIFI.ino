@@ -75,6 +75,7 @@ void loop(){
             client.println("Content-type:text/html");
             client.println("Connection: close");
             client.println();
+            //Time to turn off - 9 sec
             
             // turns the GPIOs on and off
             if (header.indexOf("GET /5/on") >= 0) {
