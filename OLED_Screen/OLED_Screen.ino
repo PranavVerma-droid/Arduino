@@ -16,7 +16,7 @@ const unsigned char myBitmap [] PROGMEM = {
 };
 
 void setup() {
-
+    //CLEAR THE SPACE IN THE SERIAL MONITOR (LUL)
   Serial.begin (115200);
      if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
     Serial.println(F("SSD1306 allocation failed"));
