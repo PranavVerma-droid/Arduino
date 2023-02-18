@@ -2,7 +2,7 @@
 All Files of Arduino for Sensor Programming
 From - Pranav Verma
 
-My Website:- https://website.infinityx.info
+https://github.com/PranavVerma-droid
 
 Projects:-
 
