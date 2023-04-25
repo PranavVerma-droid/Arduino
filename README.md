@@ -1,10 +1,11 @@
 # Arduino-IDE-Repo
-All Files of Arduino for Sensor Programming
-From - Pranav Verma
+🌍 <b>Written in Embedded C</b> 🌍 <br>
+Used the Arduino IDE to program the Arduino and the ATMEGA Microcontroller.<br><br>
+Made by [PranavVerma-droid](https://web.craftingrealm.tk). <br>
+This Code has been [licensed](LICENSE).
 
-https://github.com/PranavVerma-droid
 
-Projects:-
+<b>Projects</b>:-
 
 1. WIRELESS-HOME-SECURITY-SYSTEM
 2. ESP8266 WEB SERVER
