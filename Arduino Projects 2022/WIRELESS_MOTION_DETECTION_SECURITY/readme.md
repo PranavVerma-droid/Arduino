@@ -1,8 +1,10 @@
+# Wireless Home Secutiry
 This File is to make a Wireless Home security system with a PIR motion detection Sensor.
-Made by Pranav Verma();
+
+Made by Pranav Verma.
 
 Components Required:
-1. Arduino Uno - x1
+1. Arduino Uno/Nano/Pro Mini - x1
 2. NodeMCU - x2
 3. OLED Screen 128x64 - x1
 4. Power Adapter - x1
@@ -16,8 +18,7 @@ Xtra Things Needed:
 3. Breadboard (Optional)
 
 Procedure:
-Take the Arduino UNO, and program the MICROCONTROLLER_ATTACHED_TO_SERVER.ino file given in the folder. Then, take one
-NodeMCU and program the NODEMCU_SERVER.ino file given in the folder. Connections as Follows:
+Take the Arduino Uno/Nano/Pro Mini, and program the MICROCONTROLLER_ATTACHED_TO_SERVER.ino file given in the folder. Then, take one NodeMCU and program the NODEMCU_SERVER.ino file given in the folder. Connections as Follows:
 
 For Server (UNO, NODEMCU, PIR MOTION SENSOR):
 VIN (UNO) -> VIN (NODEMCU)
