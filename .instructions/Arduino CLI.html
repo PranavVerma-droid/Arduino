@@ -1,0 +1,1843 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)https://arduino.github.io/arduino-cli/0.33/getting-started/ -->
+<html lang="en" class="js-focus-visible js" data-js-focus-visible=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+      
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Arduino Command Line Interface">
+      
+      
+      
+      
+        <link rel="canonical" href="https://arduino.github.io/arduino-cli/0.33/getting-started/">
+      
+      <link rel="icon" href="https://arduino.github.io/arduino-cli/0.33/assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-7.3.6">
+    
+    
+      
+        <title>Getting started - Arduino CLI</title>
+      
+    
+    
+      <link rel="stylesheet" href="./Arduino CLI_files/main.a57b2b03.min.css">
+      
+        
+        <link rel="stylesheet" href="./Arduino CLI_files/palette.3f5d1f46.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#009485">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+        <link rel="stylesheet" href="./Arduino CLI_files/css">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  <style type="text/css" id="operaUserStyle"></style><style type="text/css">:root zeus-ad, :root topadblock, :root span[id^="ezoic-pub-ad-placeholder-"], :root guj-ad, :root gpt-ad, :root div[id^="zergnet-widget"], :root div[id^="yandex_ad"], :root div[id^="vuukle-ad-"], :root div[id^="sticky_ad_"], :root div[id^="rc-widget-"], :root div[id^="gpt_ad_"], :root div[id^="ezoic-pub-ad-"], :root div[id^="div-gpt-"], :root div[id^="dfp-ad-"], :root div[id^="advads_ad_"], :root div[id^="adspot-"], :root div[id^="ads300_250-widget-"], :root div[id^="ads300_100-widget-"], :root div[id^="ads250_250-widget-"], :root div[id^="adrotate_widgets-"], :root div[id^="_vdo_ads_player_ai_"], :root div[id*="ScriptRoot"], :root div[id*="MarketGid"], :root div[data-native_ad], :root div[data-mini-ad-unit], :root div[data-insertion], :root div[data-id-advertdfpconf], :root div[data-google-query-id], :root hl-adsense, :root div[data-contentexchange-widget], :root div[data-content="Advertisement"], :root div[data-alias="300x250 Ad 2"], :root div[data-alias="300x250 Ad 1"], :root div[data-adzone], :root div[data-adunit-path], :root div[data-ad-wrapper], :root div[data-ad-targeting], :root div[data-ad-placeholder], :root div[class^="native-ad-"], :root div[data-dfp-id], :root div[class^="kiwi-ad-wrapper"], :root div[class^="Adstyled__AdWrapper-"], :root div[aria-label="Ads"], :root display-ads, :root display-ad-component, :root bottomadblock, :root atf-ad-slot, :root aside[id^="adrotate_widgets-"], :root article.ad, :root ark-top-ad, :root app-advertisement, :root app-ad, :root amp-fx-flying-carpet, :root amp-embed[type="taboola"], :root amp-connatix-player, :root amp-ad-custom, :root amp-ad, :root ad-shield-ads, :root a[onmousedown^="this.href='https://paid.outbrain.com/network/redir?"][target="_blank"] + .ob_source, :root citrus-ad-wrapper, :root a[onmousedown^="this.href='https://paid.outbrain.com/network/redir?"][target="_blank"], :root a[onmousedown^="this.href='http://paid.outbrain.com/network/redir?"][target="_blank"] + .ob_source, :root a[href^="https://yogacomplyfuel.com/"], :root a[href^="https://www.sugarinstant.com/?partner_id="], :root a[href^="https://www.purevpn.com/"][href*="&utm_source=aff-"], :root a[href^="https://www.privateinternetaccess.com/"] > img, :root a[href^="https://www.onlineusershielder.com/"], :root a[href^="https://www.nutaku.net/signup/landing/"], :root a[href^="https://www.nudeidols.com/cams/"], :root a[href^="https://www.mypornstarcams.com/landing/click/"], :root a[href^="https://www.kingsoffetish.com/tour?partner_id="], :root a[href^="https://www.infowarsstore.com/"] > img, :root a[href^="https://www.highcpmrevenuenetwork.com/"], :root a[href^="https://www.googleadservices.com/pagead/aclk?"], :root a[href^="https://www.goldenfrog.com/vyprvpn?offer_id="][href*="&aff_id="], :root a[href^="https://www.get-express-vpn.com/offer/"], :root a[href^="https://www.financeads.net/tc.php?"], :root a[href^="https://www.brazzersnetwork.com/landing/"], :root div[class^="Display_displayAd"], :root a[href^="https://www.sheetmusicplus.com/?aff_id="], :root a[href^="https://www.bang.com/?aff="], :root [data-template-type="nativead"], :root a[href^="https://www.adultempire.com/"][href*="?partner_id="], :root a[href^="https://webroutetrk.com/"], :root a[href^="https://twinrdsyn.com/"], :root a[href^="https://tsartech.g2afse.com/"], :root [href^="https://www.mypatriotsupply.com/"] > img, :root a[href^="https://trk.softonixs.xyz/"], :root a[href^="https://trk.nfl-online-streams.club/"], :root a[href^="https://tracking.avapartner.com/"], :root a[href^="https://track.wg-aff.com"], :root a[href^="https://track.afcpatrk.com/"], :root a[href^="https://torguard.net/aff.php"] > img, :root div[data-adname], :root a[href^="https://thechleads.pro/"], :root [data-role="tile-ads-module"], :root a[href^="https://adsrv4k.com/"], :root a[href^="https://go.xlviirdr.com"], :root a[href^="https://thaudray.com/"], :root a[href^="https://www.5mno3.com/"], :root a[href^="https://taghaugh.com/"], :root a[href^="https://click.candyoffers.com/"], :root [href^="https://zstacklife.com/"] img, :root a[href^="https://t.aslnk.link/"], :root a[href^="https://t.adating.link/"], :root a[href^="https://go.trackitalltheway.com/"], :root [href^="https://track.fiverr.com/visit/"] > img, :root a[href^="https://syndication.exoclick.com/"], :root a[href^="https://syndication.dynsrvtbg.com/"], :root a[href^="https://streamate.com/landing/click/"], :root a[href^="https://ad.doubleclick.net/"], :root a[href^="https://static.fleshlight.com/images/banners/"], :root [data-adblockkey], :root a[href^="https://sTARtgamIng.net/tienda/"], :root a[href^="https://aweptjmp.com/"], :root a[href^="https://s.zlinkc.com/"], :root a[href^="https://www.mrskin.com/account/"], :root a[href^="https://s.optzsrv.com/"], :root a[data-obtrack^="http://paid.outbrain.com/network/redir?"], :root a[href^="https://reinstandpointdumbest.com/"], :root a[href^="https://go.strpjmp.com/"], :root a[href^="https://refpa4903566.top/"], :root a[href^="https://pubads.g.doubleclick.net/"], :root a[href^="https://prf.hn/click/"][href*="/camref:"] > img, :root a[href^="https://serve.awmdelivery.com/"], :root a[href^="https://prf.hn/click/"][href*="/adref:"] > img, :root a[href^="https://pb-track.com/"], :root a[href^="https://paid.outbrain.com/network/redir?"], :root ps-connatix-module, :root div[id^="ad_position_"], :root a[href^="https://ovb.im/"], :root div[id^="ad-div-"], :root a[href^="https://newbinotracs.com/"], :root a[href^="https://natour.naughtyamerica.com/track/"], :root [href^="https://stvkr.com/"], :root a[href^="https://mediaserver.entainpartners.com/renderBanner.do?"], :root [href^="https://www.herbanomic.com/"] > img, :root a[href^="https://maymooth-stopic.com/"], :root a[href^="https://loboclick.com"], :root [href^="https://routewebtk.com/"], :root a[href^="https://see.kmisln.com/"], :root .nya-slot[style], :root a[href^="https://a.bestcontentweb.top/"], :root a[href^="https://lobimax.com/"], :root a[href^="https://lead1.pl/"], :root a[href^="https://refpa.top/"], :root a[href^="https://landing.brazzersnetwork.com/"], :root a[href^="https://safesurfingtoday.com/"][href*="?skip="], :root a[href^="https://ads.leovegas.com/redirect.aspx?"], :root a[href^="https://land.brazzersnetwork.com/landing/"], :root a[href^="https://track.adform.net/"], :root [data-css-class="dfp-inarticle"], :root .card-captioned.crd > .crd--cnt > .s2nPlayer, :root a[href^="https://go.tmrjmp.com"], :root a[href^="https://l.hyenadata.com/"], :root a[href^="https://juicyads.in/"], :root a[href^="https://mediaserver.gvcaffiliates.com/renderBanner.do?"], :root a[href^="https://join.dreamsexworld.com/"], :root a[href^="https://itubego.com/video-downloader/?affid="], :root a[href^="https://iqbroker.com/"][href*="?aff="], :root a[href^="https://incisivetrk.cvtr.io/click?"], :root [data-revive-zoneid], :root a[href^="https://googleads.g.doubleclick.net/pcs/click"], :root a[href^="https://clk.wrenchsound.store/"], :root a[href^="https://go.zybrdr.com"], :root [href^="http://join.michelle-austin.com/"], :root [class^="tile-picker__CitrusBannerContainer-sc-"], :root a[href^="https://go.xxxiijmp.com"], :root a[href^="https://go.xtbaffiliates.com/"], :root a[href^="https://ismlks.com/"], :root a[href^="//a.bestcontentfare.top/"], :root [href^="https://www.mypillow.com/"] > img, :root a[href^="https://azpresearch.club/"], :root a[href^="https://go.xlirdr.com"], :root a[href^="https://go.skinstrip.net"][href*="?campaignId="], :root a[href^="https://go.markets.com/visit/?bta="], :root a[href^="https://billing.purevpn.com/aff.php"] > img, :root a[href^="https://go.hpyrdr.com/"], :root a[href^="https://go.goaserv.com/"], :root a[href^="https://go.dmzjmp.com"], :root a[href^="https://twinrdsrv.com/"], :root a[href^="https://go.admjmp.com/"], :root [href^="https://kingered-banctours.com/"], :root a[href^="https://get.surfshark.net/aff_c?"][href*="&aff_id="] > img, :root a-ad, :root a[href^="https://affiliate.rusvpn.com/click.php?"], :root a[href^="https://geniusdexchange.com/"], :root a[href^="https://frameworkdeserve.com/"], :root a[href^="https://flirtandsweets.life/"], :root a[href^="https://www.mrskin.com/tour"], :root a[href^="https://financeads.net/tc.php?"], :root div[data-native-ad], :root a[href^="https://engine.trackingdesks.com/"], :root [href^="https://totlnkcl.com/"], :root a[href^="https://www.adskeeper.com"], :root a[data-redirect^="https://paid.outbrain.com/network/redir?"], :root [href^="https://www.reimageplus.com/"], :root a[href^="https://engine.phn.doublepimp.com/"], :root a[href^="https://engine.blueistheneworanges.com/"], :root div[id^="optidigital-adslot"], :root a[href^="https://wantopticalfreelance.com/"], :root a[href^="https://dl-protect.net/"], :root a[href^="https://datingoffers30.info/"], :root a[href^="https://clixtrac.com/"], :root a[href^="https://click.linksynergy.com/fs-bin/"] > img, :root AD-TRIPLE-BOX, :root a[href^="https://click.hoolig.app/"], :root a[href^="https://track.totalav.com/"], :root img[src^="https://images.purevpnaffiliates.com"], :root a[href^="https://porntubemate.com/"], :root a[href^="http://www.gfrevenge.com/landing/"], :root a[href^="https://clickadilla.com/"], :root a[href^="https://click.dtiserv2.com/"], :root a[href^="https://go.xlvirdr.com"], :root a[href^="http://www.iyalc.com/"], :root a[href^="https://claring-loccelkin.com/"], :root [class^="s2nPlayer"], :root a[href^="https://chaturbate.jjgirls.com/?track="], :root a[href^="https://chaturbate.com/in/?track="], :root a[href^="https://chaturbate.com/in/?tour="], :root a[href^="https://cams.imagetwist.com/in/?track="], :root a[href^="https://go.gldrdr.com/"], :root a[href^="https://buqkrzbrucz.com/"], :root a[href^="https://affcpatrk.com/"], :root a[href^="https://bongacams2.com/track?"], :root a[href^="https://www.sheetmusicplus.com/"][href*="?aff_id="], :root a[href^="https://bngpt.com/"], :root a[href^="https://bluedelivery.pro/"], :root a[href^="https://black77854.com/"], :root a[href^="https://bc.game/"], :root a[href^="https://ndt5.net/"], :root a[href^="https://batheunits.com/"], :root a[target="_blank"][onmousedown="this.href^='http://paid.outbrain.com/network/redir?"], :root a[href^="https://banners.livepartners.com/"], :root a[href^="//whulsaux.com/"], :root a[href^="https://m.do.co/c/"] > img, :root [href="https://masstortfinancing.com"] img, :root a[href^="https://bongacams10.com/track?"], :root a[href^="https://albionsoftwares.com/"], :root a[href^="https://t.hrtye.com/"], :root a[href^="https://go.etoro.com/"] > img, :root a[href^="https://www.adxsrve.com/"], :root a[href^="https://convertmb.com/"], :root a[href^="https://join.sexworld3d.com/track/"], :root a[href^="https://intenseaffiliates.com/redirect/"], :root a[href^="https://ads.ad4game.com/"], :root [id^="google_ads_iframe"], :root a[href^="https://syndication.optimizesrv.com/"], :root a[href^="https://affpa.top/"], :root a[href^="https://adnetwrk.com/"], :root a[href^="https://adjoincomprise.com/"], :root [href^="http://misslinkvocation.com/"], :root a[href^="https://adclick.g.doubleclick.net/"], :root a[href^="https://www.bet365.com/"][href*="affiliate="], :root [href^="https://r.kraken.com/"], :root a[href^="https://mmwebhandler.aff-online.com/"], :root a[href^="https://go.nordvpn.net/aff"] > img, :root [href^="http://clicks.totemcash.com/"], :root a[href^="https://misspkl.com/"], :root a[href^="https://ad.zanox.com/ppc/"] > img, :root a[href^="https://ad.kubiccomps.icu/"], :root a[href^="https://a2.adform.net/"], :root a[href^="https://iactrivago.ampxdirect.com/"], :root a[href^="https://a.medfoodhome.com/"], :root a[href^="https://adultfriendfinder.com/go/"], :root a[href^="https://a.bestcontentoperation.top/"], :root [data-m-ad-id], :root a[href^="https://a-ads.com/"], :root a[href^="https://join.virtualtaboo.com/track/"], :root a[href^="https://StarTGAminG.net/tienda/"], :root [href="https://ourgoldguy.com/contact/"] img, :root a[href^="https://brightadnetwork.com/"], :root [href^="https://www.avantlink.com/click.php"] img, :root a[href^="http://www.onwebcam.com/random?t_link="], :root a[href^="http://www.mrskin.com/tour"], :root a[href^="https://agacelebir.com/"], :root a[href^="https://spygasm.com/track?"], :root a[href^="http://d2.zedo.com/"], :root a[href^="http://www.friendlyduck.com/AF_"], :root a[href^="http://trk.globwo.online/"], :root a[href^="https://prf.hn/click/"][href*="/creativeref:"] > img, :root a[href^="http://www.adultempire.com/unlimited/promo?"][href*="&partner_id="], :root a[href^="http://traffic.tc-clicks.com/"], :root a[href^="http://tour.mrskin.com/"], :root a[href^="https://funkydaters.com/"], :root [id^="ad_sky"], :root a[href^="http://https://www.get-express-vpn.com/offer/"], :root div[id^="google_dfp_"], :root a[href^="http://googleads.g.doubleclick.net/pcs/click"], :root .rc-cta[data-target], :root [href^="http://go.cm-trk2.com/"], :root a[href^="http://click.payserve.com/"], :root a[href^="https://porngames.adult/?SID="], :root a[href^="https://landing1.brazzersnetwork.com"], :root #slashboxes > .deals-rail, :root [href^="http://globsads.com/"], :root [href^="https://www.brighteonstore.com/products/"] img, :root a[href^="http://bc.vc/?r="], :root a[href^="https://mityneedn.com/"], :root [href^="http://homemoviestube.com/"], :root a[href^="http://ad.doubleclick.net/"], :root a[href^="//zunsoach.com/"], :root a[href^="http://static.fleshlight.com/images/banners/"], :root a[href^="https://a.adtng.com/"], :root a[href^="//pubads.g.doubleclick.net/"], :root a[href^="https://femglobal.app/"], :root a[href^="//go.eabids.com/"], :root [data-d-ad-id], :root a[href*=".engine.adglare.net/"], :root [href^="https://awbbjmp.com/"], :root a[href^="https://tracker.loropartners.com/"], :root #kt_player > a[target="_blank"], :root a[href*=".cfm?fp="][href*="&maxads="], :root [data-dynamic-ads], :root a[data-widget-outbrain-redirect^="http://paid.outbrain.com/network/redir?"], :root [data-ad-width], :root [href^="https://join.playboyplus.com/track/"], :root a[data-url^="http://paid.outbrain.com/network/redir?"] + .author, :root a[href^="https://axdsz.pro/"], :root a[href^="http://bodelen.com/"], :root a[data-oburl^="https://paid.outbrain.com/network/redir?"], :root [href^="https://cpa.10kfreesilver.com/"], :root a[href^="https://a.bestcontentfood.top/"], :root a[href^="http://wct.link/"], :root [href^="https://goldforyourfuture.com/clk.trk"] img, :root [href^="https://infinitytrk.com/"], :root [onclick^="location.href='http://www.reimageplus.com"], :root [id^="section-ad-banner"], :root a[href^="https://go.julrdr.com/"], :root .trc_rbox_div .syndicatedItemUB, :root [href^="https://zone.gotrackier.com/"], :root a[href^="https://visit-website.com/"], :root [href^="https://detachedbates.com/"], :root [href^="https://www.targetingpartner.com/"], :root a[href^="https://fourwhenstatistics.com/"], :root [href^="https://www.restoro.com/"], :root a[href^="https://join.virtuallust3d.com/"], :root .section-subheader > .section-hotel-prices-header, :root [href^="https://go.affiliatexe.com/"], :root [href^="https://www.hostg.xyz/"] > img, :root [href^="https://ilovemyfreedoms.com/landing-"], :root a[href^="https://staRTgaming.net/tienda/"], :root a[href^="https://STaRtgAmInG.net/tienda/"], :root a[href^="http://adultfriendfinder.com/go/"], :root a[href^="https://fastestvpn.com/lifetime-special-deal?a_aid="], :root a[href^="https://tour.mrskin.com/"], :root div[id^="ad-position-"], :root a[href^="http://affiliate.glbtracker.com/"], :root a[href^="https://leg.xyz/?track="], :root div[id^="crt-"][style], :root a[href^="http://adultgames.xxx/"], :root a[href^="https://traffic.bannerator.com/"], :root [href^="https://shiftnetwork.infusionsoft.com/go/"] > img, :root a[onmousedown^="this.href='http://paid.outbrain.com/network/redir?"][target="_blank"], :root [href^="https://secure.bmtmicro.com/servlets/"], :root a[href^="https://losingoldfry.com/"], :root .scroll-fixable.rail-right > .deals-rail, :root a[href^="https://oackoubs.com/"], :root a[href^="https://ak.psaltauw.net/"], :root a[href^="https://awptjmp.com/"], :root a[href^="https://go.goasrv.com/"], :root [href^="http://mypillow.com/"] > img, :root a[href^="http://bongacams.com/track?"], :root a[href^="https://fleshlight.sjv.io/"], :root [data-ad-manager-id], :root a[href^="https://promo-bc.com/"], :root a[href^="https://clicks.pipaffiliates.com/"], :root [href^="https://noqreport.com/"] > img, :root a[href^="https://www.highperformancecpmgate.com/"], :root a[href^="https://t.grtyi.com/"], :root [href^="https://mylead.global/stl/"] > img, :root [href^="https://mypatriotsupply.com/"] > img, :root [data-freestar-ad], :root a[href^="https://fc.lc/ref/"], :root #leader-companion > a[href], :root a[href^="https://transfer.xe.com/signup/track/redirect?"], :root .vid-present > .van_vid_carousel__padding, :root div[id^="adngin-"], :root [data-rc-widget], :root a[href^="https://go.xxxijmp.com"], :root [href^="https://istlnkcl.com/"], :root [href^="https://go.4rabettraff.com/"], :root a[href^="https://tm-offers.gamingadult.com/"], :root [href^="https://charmingdatings.life/"], :root [href^="https://glersakr.com/"], :root ins.adsbygoogle, :root a[href^="https://1startfiledownload1.com/"], :root .trc_rbox_border_elm .syndicatedItem, :root a[href^="http://www.onclickmega.com/jump/next.php?"], :root a[href^="https://wittered-mainging.com/"], :root [href^="https://engine.gettopple.com/"], :root [data-id^="div-gpt-ad"], :root a[href^="https://k2s.cc/pr/"], :root [href^="https://affect3dnetwork.com/track/"], :root a[href^="https://camfapr.com/landing/click/"], :root [href="//sexcams.plus/"], :root a[href^="https://go.currency.com/"], :root [href^="http://www.mypillow.com/"] > img, :root div[id^="div-ads-"], :root [href^="https://rapidgator.net/article/premium/ref/"], :root [href^="https://join3.bannedsextapes.com"], :root div[data-spotim-slot], :root [href^="https://antiagingbed.com/discount/"] > img, :root a[href^="https://go.247traffic.com/"], :root [href^="https://join.girlsoutwest.com/"], :root [href^="http://trafficare.net/"], :root a[href^="https://tc.tradetracker.net/"] > img, :root a[href^="https://adserver.adreactor.com/"], :root [href^="http://join.shemalesfromhell.com/"], :root [id^="ad_slider"], :root #searchResultsList > div > div[onclick$="'inline.ad'});"], :root [data-adbridg-ad-class], :root a[href^="http://www.adultdvdempire.com/?partner_id="][href*="&utm_"], :root [href^="http://join.shemale.xxx/"], :root a[href^="https://ads.betfair.com/redirect.aspx?"], :root [href^="http://www.fleshlightgirls.com/"], :root [href^="http://join.trannies-fuck.com/"], :root .trc_rbox .syndicatedItem, :root a[href^="http://cam4com.go2cloud.org/aff_c?"], :root a[href^="https://cpmspace.com/"], :root [href^="https://freecourseweb.com/"] > .sitefriend, :root a[href^="https://thefacux.com/"], :root a[href^="https://ads.planetwin365affiliate.com/redirect.aspx?"], :root [href^="http://join.rodneymoore.com/"], :root a[href*=".trust.zone"], :root [href^="https://shrugartisticelder.com"], :root [href^="https://go.xlrdr.com"], :root a[href^="https://staRTgamIng.net/tienda/"], :root div[id^="lazyad-"], :root a[href^="http://com-1.pro/"], :root [name^="google_ads_iframe"], :root a[href^="https://go.xxxjmp.com"], :root [data-desktop-ad-id], :root [href^="https://wct.link/"], :root div[recirculation-ad-container], :root [href^="https://traffserve.com/"], :root [href="https://www.masstortfinancing.com/"] > img, :root .ob_container .item-container-obpd, :root [id^="div-gpt-ad"], :root [href^="https://mypillow.com/"] > img, :root [href^="https://ad.admitad.com/"], :root [data-testid="ad_testID"], :root a[href^="https://u.expresstech.io/"], :root a[href^="https://www.geekbuying.com/dynamic-ads/"], :root a[href^="https://lnkxt.bannerator.com/"], :root [href="https://jdrucker.com/gold"] > img, :root [href^="https://v.investologic.co.uk/"], :root [href^="https://mystore.com/"] > img, :root ADS-RIGHT, :root [href^="https://cipledecline.buzz/"], :root a[href^="https://track.ultravpn.com/"], :root [href^="https://goldcometals.com/clk.trk"], :root a[href^="https://go.hpyjmp.com"], :root [data-mobile-ad-id], :root a[href^="http://tc.tradetracker.net/"] > img, :root a[href^="http://affiliates.thrixxx.com/"], :root [data-ad-name], :root [data-ez-name], :root a[href^="http://go.xtbaffiliates.com/"], :root a[href^="https://consali.com/"], :root .grid > .container > #aside-promotion, :root DFP-AD, :root .trc_related_container div[data-item-syndicated="true"], :root a[href^="https://www.liquidfire.mobi/"], :root [href^="https://click2cvs.com/"], :root a[href^="https://startgAming.net/tienda/"], :root [href^="https://safer-redirection.com"], :root [href^="https://optimizedelite.com/"] > img, :root [data-name="adaptiveConstructorAd"], :root [onclick*="content.ad/"], :root AMP-AD, :root [data-ad-cls], :root [id^="ad-wrap-"], :root div[id^="taboola-stream-"], :root [href^="https://go.astutelinks.com/"], :root [class^="amp-ad-"], :root [href^="https://affiliate.fastcomet.com/"] > img, :root [class^="adDisplay-module"], :root AD-SLOT, :root a[href^="https://go.xlviiirdr.com"], :root [href^="http://join.shemalepornstar.com/"], :root a[href^="http://partners.etoro.com/"], :root [data-advadstrackid], :root [href^="https://trackfin.asia/"], :root .plistaList > .plista_widget_underArticle_item[data-type="pet"], :root .ob_dual_right > .ob_ads_header ~ .odb_div, :root .trc_rbox_div .syndicatedItem, :root div[data-adunit], :root app-large-ad, :root [href^="https://turtlebids.irauctions.com/"] img, :root [data-ad-module], :root a[href^="https://cam4com.go2cloud.org/"], :root a[href^="http://li.blogtrottr.com/click?"], :root a[href^="https://go.cmtaffiliates.com/"], :root a[href^="https://bs.serving-sys.com"], :root [href^="http://residenceseeingstanding.com/"], :root a[href*="//lkstrck2.com/"], :root .plistaList > .itemLinkPET, :root a[href^="https://traffdaq.com/"], :root [class^="div-gpt-ad"], :root a[href^="https://refpazkjixes.top/"], :root #mgb-container > #mgb, :root [href^="https://www.cloudways.com/en/?id"], :root a[href^="https://trk.sportsflix4k.club/"], :root a[href^="https://go.xlivrdr.com"] { display: none !important; }</style></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="teal" data-md-color-accent="orange">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="https://arduino.github.io/arduino-cli/0.33/getting-started/#before-you-start" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header" data-md-state="shadow">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://arduino.github.io/arduino-cli/0.33/" title="Arduino CLI" class="md-header__button md-logo" aria-label="Arduino CLI" data-md-component="logo">
+      
+  <img src="./Arduino CLI_files/icon_mac_light.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title" data-md-state="active">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Arduino CLI
+          </span>
+        <div class="md-version"><button class="md-version__current" aria-label="Select version">0.33</button><ul class="md-version__list"><li class="md-version__item"><a href="https://arduino.github.io/arduino-cli/0.33/" class="md-version__link">0.33</a></li><li class="md-version__item"><a href="https://arduino.github.io/arduino-cli/0.32/" class="md-version__link">0.32</a></li><li class="md-version__item"><a href="https://arduino.github.io/arduino-cli/0.31/" class="md-version__link">0.31</a></li><li class="md-version__item"><a href="https://arduino.github.io/arduino-cli/0.30/" class="md-version__link">0.30</a></li><li class="md-version__item"><a href="https://arduino.github.io/arduino-cli/0.29/" class="md-version__link">0.29</a></li><li class="md-version__item"><a href="https://arduino.github.io/arduino-cli/0.28/" class="md-version__link">0.28</a></li><li class="md-version__item"><a href="https://arduino.github.io/arduino-cli/0.27/" class="md-version__link">0.27</a></li><li class="md-version__item"><a href="https://arduino.github.io/arduino-cli/0.26/" class="md-version__link">0.26</a></li><li class="md-version__item"><a href="https://arduino.github.io/arduino-cli/0.25/" class="md-version__link">0.25</a></li><li class="md-version__item"><a href="https://arduino.github.io/arduino-cli/0.24/" class="md-version__link">0.24</a></li><li class="md-version__item"><a href="https://arduino.github.io/arduino-cli/0.23/" class="md-version__link">0.23</a></li><li class="md-version__item"><a href="https://arduino.github.io/arduino-cli/0.22/" class="md-version__link">0.22</a></li><li class="md-version__item"><a href="https://arduino.github.io/arduino-cli/0.21/" class="md-version__link">0.21</a></li><li class="md-version__item"><a href="https://arduino.github.io/arduino-cli/0.20/" class="md-version__link">0.20</a></li><li class="md-version__item"><a href="https://arduino.github.io/arduino-cli/0.19/" class="md-version__link">0.19</a></li><li class="md-version__item"><a href="https://arduino.github.io/arduino-cli/0.18/" class="md-version__link">0.18</a></li><li class="md-version__item"><a href="https://arduino.github.io/arduino-cli/0.17/" class="md-version__link">0.17</a></li><li class="md-version__item"><a href="https://arduino.github.io/arduino-cli/0.16/" class="md-version__link">0.16</a></li><li class="md-version__item"><a href="https://arduino.github.io/arduino-cli/0.15/" class="md-version__link">0.15</a></li><li class="md-version__item"><a href="https://arduino.github.io/arduino-cli/0.14/" class="md-version__link">0.14</a></li><li class="md-version__item"><a href="https://arduino.github.io/arduino-cli/0.13/" class="md-version__link">0.13</a></li><li class="md-version__item"><a href="https://arduino.github.io/arduino-cli/0.12/" class="md-version__link">0.12</a></li><li class="md-version__item"><a href="https://arduino.github.io/arduino-cli/0.11/" class="md-version__link">0.11</a></li><li class="md-version__item"><a href="https://arduino.github.io/arduino-cli/0.10/" class="md-version__link">0.10</a></li><li class="md-version__item"><a href="https://arduino.github.io/arduino-cli/dev/" class="md-version__link">dev</a></li></ul></div></div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Getting started
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">Type to start searching</div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/arduino/arduino-cli" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+  </div>
+  <div class="md-source__repository" data-md-state="done">
+    arduino/arduino-cli
+  <ul class="md-source__facts"><li class="md-source__fact md-source__fact--version">0.33.1</li><li class="md-source__fact md-source__fact--stars">3.9k</li><li class="md-source__fact md-source__fact--forks">350</li></ul></div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" style="top: 48px;">
+                <div class="md-sidebar__scrollwrap" style="height: 636px;">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://arduino.github.io/arduino-cli/0.33/" title="Arduino CLI" class="md-nav__button md-logo" aria-label="Arduino CLI" data-md-component="logo">
+      
+  <img src="./Arduino CLI_files/icon_mac_light.png" alt="logo">
+
+    </a>
+    Arduino CLI
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/arduino/arduino-cli" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+  </div>
+  <div class="md-source__repository" data-md-state="done">
+    arduino/arduino-cli
+  <ul class="md-source__facts"><li class="md-source__fact md-source__fact--version">0.33.1</li><li class="md-source__fact md-source__fact--stars">3.9k</li><li class="md-source__fact md-source__fact--forks">350</li></ul></div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list">
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/installation/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/UPGRADING/" class="md-nav__link">
+        Upgrading
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Getting started
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="https://arduino.github.io/arduino-cli/0.33/getting-started/" class="md-nav__link md-nav__link--active">
+        Getting started
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc">
+      
+        <li class="md-nav__item">
+  <a href="https://arduino.github.io/arduino-cli/0.33/getting-started/#before-you-start" class="md-nav__link" data-md-state="blur">
+    Before you start
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="https://arduino.github.io/arduino-cli/0.33/getting-started/#create-a-configuration-file" class="md-nav__link" data-md-state="blur">
+    Create a configuration file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="https://arduino.github.io/arduino-cli/0.33/getting-started/#create-a-new-sketch" class="md-nav__link" data-md-state="blur">
+    Create a new sketch
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="https://arduino.github.io/arduino-cli/0.33/getting-started/#connect-the-board-to-your-pc" class="md-nav__link" data-md-state="blur">
+    Connect the board to your PC
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="https://arduino.github.io/arduino-cli/0.33/getting-started/#install-the-core-for-your-board" class="md-nav__link" data-md-state="blur">
+    Install the core for your board
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="https://arduino.github.io/arduino-cli/0.33/getting-started/#adding-3rd-party-cores" class="md-nav__link md-nav__link--active" data-md-state="blur">
+    Adding 3rd party cores
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="https://arduino.github.io/arduino-cli/0.33/getting-started/#compile-and-upload-the-sketch" class="md-nav__link">
+    Compile and upload the sketch
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="https://arduino.github.io/arduino-cli/0.33/getting-started/#add-libraries" class="md-nav__link">
+    Add libraries
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="https://arduino.github.io/arduino-cli/0.33/getting-started/#using-the-daemon-mode-and-the-grpc-interface" class="md-nav__link">
+    Using the daemon mode and the gRPC interface
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/command-line-completion/" class="md-nav__link">
+        Command line completion
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/CONTRIBUTING/" class="md-nav__link">
+        How to contribute
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/FAQ/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8">
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Command reference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Command reference" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Command reference
+        </label>
+        <ul class="md-nav__list">
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/commands/arduino-cli/" class="md-nav__link">
+        arduino-cli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/commands/arduino-cli_board/" class="md-nav__link">
+        board
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/commands/arduino-cli_board_attach/" class="md-nav__link">
+        board attach
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/commands/arduino-cli_board_details/" class="md-nav__link">
+        board details
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/commands/arduino-cli_board_list/" class="md-nav__link">
+        board list
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/commands/arduino-cli_board_listall/" class="md-nav__link">
+        board listall
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/commands/arduino-cli_board_search/" class="md-nav__link">
+        board search
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/commands/arduino-cli_burn-bootloader/" class="md-nav__link">
+        burn-bootloader
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/commands/arduino-cli_cache/" class="md-nav__link">
+        cache
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/commands/arduino-cli_cache_clean/" class="md-nav__link">
+        cache clean
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/commands/arduino-cli_compile/" class="md-nav__link">
+        compile
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/commands/arduino-cli_completion/" class="md-nav__link">
+        completion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/commands/arduino-cli_config/" class="md-nav__link">
+        config
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/commands/arduino-cli_config_dump/" class="md-nav__link">
+        config dump
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/commands/arduino-cli_config_init/" class="md-nav__link">
+        config init
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/commands/arduino-cli_config_add/" class="md-nav__link">
+        config add
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/commands/arduino-cli_config_delete/" class="md-nav__link">
+        config delete
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/commands/arduino-cli_config_remove/" class="md-nav__link">
+        config remove
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/commands/arduino-cli_config_set/" class="md-nav__link">
+        config set
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/commands/arduino-cli_core/" class="md-nav__link">
+        core
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/commands/arduino-cli_core_download/" class="md-nav__link">
+        core download
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/commands/arduino-cli_core_install/" class="md-nav__link">
+        core install
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/commands/arduino-cli_core_list/" class="md-nav__link">
+        core list
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/commands/arduino-cli_core_search/" class="md-nav__link">
+        core search
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/commands/arduino-cli_core_uninstall/" class="md-nav__link">
+        core uninstall
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/commands/arduino-cli_core_update-index/" class="md-nav__link">
+        core update-index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/commands/arduino-cli_core_upgrade/" class="md-nav__link">
+        core upgrade
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/commands/arduino-cli_daemon/" class="md-nav__link">
+        daemon
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/commands/arduino-cli_debug/" class="md-nav__link">
+        debug
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/commands/arduino-cli_lib/" class="md-nav__link">
+        lib
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/commands/arduino-cli_lib_deps/" class="md-nav__link">
+        lib deps
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/commands/arduino-cli_lib_download/" class="md-nav__link">
+        lib download
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/commands/arduino-cli_lib_examples/" class="md-nav__link">
+        lib examples
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/commands/arduino-cli_lib_install/" class="md-nav__link">
+        lib install
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/commands/arduino-cli_lib_list/" class="md-nav__link">
+        lib list
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/commands/arduino-cli_lib_search/" class="md-nav__link">
+        lib search
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/commands/arduino-cli_lib_uninstall/" class="md-nav__link">
+        lib uninstall
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/commands/arduino-cli_lib_update-index/" class="md-nav__link">
+        lib update-index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/commands/arduino-cli_lib_upgrade/" class="md-nav__link">
+        lib upgrade
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/commands/arduino-cli_monitor/" class="md-nav__link">
+        monitor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/commands/arduino-cli_outdated/" class="md-nav__link">
+        outdated
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/commands/arduino-cli_sketch/" class="md-nav__link">
+        sketch
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/commands/arduino-cli_sketch_archive/" class="md-nav__link">
+        sketch archive
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/commands/arduino-cli_sketch_new/" class="md-nav__link">
+        sketch new
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/commands/arduino-cli_update/" class="md-nav__link">
+        update
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/commands/arduino-cli_upgrade/" class="md-nav__link">
+        upgrade
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/commands/arduino-cli_upload/" class="md-nav__link">
+        upload
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/commands/arduino-cli_version/" class="md-nav__link">
+        version
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9">
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          gRPC reference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="gRPC reference" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          gRPC reference
+        </label>
+        <ul class="md-nav__list">
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/rpc/commands/" class="md-nav__link">
+        commands
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/rpc/settings/" class="md-nav__link">
+        settings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/rpc/debug/" class="md-nav__link">
+        debug
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/configuration/" class="md-nav__link">
+        Configuration
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/integration-options/" class="md-nav__link">
+        Integration options
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/sketch-build-process/" class="md-nav__link">
+        Sketch build process
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/sketch-specification/" class="md-nav__link">
+        Sketch specification
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/sketch-project-file/" class="md-nav__link">
+        Sketch project file
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/library-specification/" class="md-nav__link">
+        Library specification
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/platform-specification/" class="md-nav__link">
+        Platform specification
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/pluggable-discovery-specification/" class="md-nav__link">
+        Pluggable discovery specification
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/pluggable-monitor-specification/" class="md-nav__link">
+        Pluggable monitor specification
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/package_index_json-specification/" class="md-nav__link">
+        Package index specification
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_20" type="checkbox" id="__nav_20">
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_20">
+          Guides
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Guides" data-md-level="1">
+        <label class="md-nav__title" for="__nav_20">
+          <span class="md-nav__icon md-icon"></span>
+          Guides
+        </label>
+        <ul class="md-nav__list">
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://arduino.github.io/arduino-cli/0.33/guides/secure-boot/" class="md-nav__link">
+        Secure boot
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" style="top: 48px;">
+                <div class="md-sidebar__scrollwrap" style="height: 636px;">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc">
+      
+        <li class="md-nav__item">
+  <a href="https://arduino.github.io/arduino-cli/0.33/getting-started/#before-you-start" class="md-nav__link" data-md-state="blur">
+    Before you start
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="https://arduino.github.io/arduino-cli/0.33/getting-started/#create-a-configuration-file" class="md-nav__link" data-md-state="blur">
+    Create a configuration file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="https://arduino.github.io/arduino-cli/0.33/getting-started/#create-a-new-sketch" class="md-nav__link" data-md-state="blur">
+    Create a new sketch
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="https://arduino.github.io/arduino-cli/0.33/getting-started/#connect-the-board-to-your-pc" class="md-nav__link" data-md-state="blur">
+    Connect the board to your PC
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="https://arduino.github.io/arduino-cli/0.33/getting-started/#install-the-core-for-your-board" class="md-nav__link" data-md-state="blur">
+    Install the core for your board
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="https://arduino.github.io/arduino-cli/0.33/getting-started/#adding-3rd-party-cores" class="md-nav__link md-nav__link--active" data-md-state="blur">
+    Adding 3rd party cores
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="https://arduino.github.io/arduino-cli/0.33/getting-started/#compile-and-upload-the-sketch" class="md-nav__link">
+    Compile and upload the sketch
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="https://arduino.github.io/arduino-cli/0.33/getting-started/#add-libraries" class="md-nav__link">
+    Add libraries
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="https://arduino.github.io/arduino-cli/0.33/getting-started/#using-the-daemon-mode-and-the-grpc-interface" class="md-nav__link">
+    Using the daemon mode and the gRPC interface
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/arduino/arduino-cli/blob/master/docs/getting-started.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
+                  </a>
+                
+                
+                  <h1>Getting started</h1>
+                
+                <p>Despite the lack of feature parity at the moment, Arduino CLI provides many of the features you can find in the Arduino
+IDE. Let's see some examples.</p>
+<h2 id="before-you-start">Before you start<a class="headerlink" href="https://arduino.github.io/arduino-cli/0.33/getting-started/#before-you-start" title="Permanent link">¶</a></h2>
+<p><code>arduino-cli</code> is a container of commands and each command has its own dedicated help text that can be shown with the
+<code>help</code> command like this:</p>
+<div class="highlight"><pre id="__code_0"><span></span><button class="md-clipboard md-icon" title="Copy to clipboard" data-clipboard-target="#__code_0 &gt; code"></button><code tabindex="0"><span class="gp">$ </span>arduino-cli <span class="nb">help</span> core
+<span class="go">Arduino Core operations.</span>
+
+<span class="go">Usage:</span>
+<span class="go">    arduino-cli core [command]</span>
+
+<span class="go">Examples:</span>
+<span class="go">    ./arduino-cli core update-index</span>
+
+<span class="go">Available Commands:</span>
+<span class="go">    download     Downloads one or more cores and corresponding tool dependencies.</span>
+<span class="go">    install      Installs one or more cores and corresponding tool dependencies.</span>
+<span class="go">    list         Shows the list of installed platforms.</span>
+<span class="go">    search       Search for a core in Boards Manager.</span>
+<span class="go">    uninstall    Uninstalls one or more cores and corresponding tool dependencies if no more used.</span>
+<span class="go">    update-index Updates the index of cores.</span>
+<span class="go">    upgrade      Upgrades one or all installed platforms to the latest version.</span>
+
+<span class="go">Flags:</span>
+<span class="go">    -h, --help   help for core</span>
+
+<span class="go">Global Flags:</span>
+<span class="go">        --additional-urls strings   Additional URLs for Boards Manager.</span>
+<span class="go">        --config-file string        The custom config file (if not specified the default will be used).</span>
+<span class="go">        --format string             The output format, can be [text|json]. (default "text")</span>
+<span class="go">        --log-file string           Path to the file where logs will be written.</span>
+<span class="go">        --log-format string         The output format for the logs, can be [text|json].</span>
+<span class="go">        --log-level string          Messages with this level and above will be logged.</span>
+<span class="go">    -v, --verbose                   Print the logs on the standard output.</span>
+
+<span class="go">Use "arduino-cli core [command] --help" for more information about a command.</span>
+</code></pre></div>
+<h2 id="create-a-configuration-file">Create a configuration file<a class="headerlink" href="https://arduino.github.io/arduino-cli/0.33/getting-started/#create-a-configuration-file" title="Permanent link">¶</a></h2>
+<p>Arduino CLI doesn't strictly require a configuration file to work because the command line interface provides any
+possible functionality. However, having one can spare you a lot of typing when issuing a command, so let's go ahead and
+create it with:</p>
+<div class="highlight"><pre id="__code_1"><span></span><button class="md-clipboard md-icon" title="Copy to clipboard" data-clipboard-target="#__code_1 &gt; code"></button><code>$ arduino-cli config init
+Config file written: /home/luca/.arduino15/arduino-cli.yaml
+</code></pre></div>
+<p>If you inspect the contents of <code>arduino-cli.yaml</code>, you'll find the available options with their respective default
+values. For more information, see the <a href="https://arduino.github.io/arduino-cli/0.33/configuration/">configuration documentation</a>.</p>
+<h2 id="create-a-new-sketch">Create a new sketch<a class="headerlink" href="https://arduino.github.io/arduino-cli/0.33/getting-started/#create-a-new-sketch" title="Permanent link">¶</a></h2>
+<p>To create a new sketch named <code>MyFirstSketch</code> in the current directory, run the following command:</p>
+<div class="highlight"><pre id="__code_2"><span></span><button class="md-clipboard md-icon" title="Copy to clipboard" data-clipboard-target="#__code_2 &gt; code"></button><code>$ arduino-cli sketch new MyFirstSketch
+Sketch created <span class="k">in</span>: /home/luca/MyFirstSketch
+</code></pre></div>
+<p>A sketch is a folder containing assets like source files and libraries; the <code>new</code> command creates for you a .ino file
+called <code>MyFirstSketch.ino</code> containing Arduino boilerplate code:</p>
+<div class="highlight"><pre id="__code_3"><span></span><button class="md-clipboard md-icon" title="Copy to clipboard" data-clipboard-target="#__code_3 &gt; code"></button><code>$ cat <span class="nv">$HOME</span>/MyFirstSketch/MyFirstSketch.ino
+void setup<span class="o">()</span> <span class="o">{</span>
+<span class="o">}</span>
+
+void loop<span class="o">()</span> <span class="o">{</span>
+<span class="o">}</span>
+</code></pre></div>
+<p>At this point you can use your favourite file editor or IDE to open the file <code>$HOME/MyFirstSketch/MyFirstSketch.ino</code> and
+change the code like this:</p>
+<div class="highlight"><pre id="__code_4"><span></span><button class="md-clipboard md-icon" title="Copy to clipboard" data-clipboard-target="#__code_4 &gt; code"></button><code><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="n">LED_BUILTIN</span><span class="p">,</span><span class="w"> </span><span class="n">OUTPUT</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED_BUILTIN</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED_BUILTIN</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h2 id="connect-the-board-to-your-pc">Connect the board to your PC<a class="headerlink" href="https://arduino.github.io/arduino-cli/0.33/getting-started/#connect-the-board-to-your-pc" title="Permanent link">¶</a></h2>
+<p>The first thing to do upon a fresh install is to update the local cache of available platforms and libraries by running:</p>
+<div class="highlight"><pre id="__code_5"><span></span><button class="md-clipboard md-icon" title="Copy to clipboard" data-clipboard-target="#__code_5 &gt; code"></button><code>$ arduino-cli core update-index
+Updating index: package_index.json downloaded
+</code></pre></div>
+<p>After connecting the board to your PC by using the USB cable, you should be able to check whether it's been recognized
+by running:</p>
+<div class="highlight"><pre id="__code_6"><span></span><button class="md-clipboard md-icon" title="Copy to clipboard" data-clipboard-target="#__code_6 &gt; code"></button><code tabindex="0">$ arduino-cli board list
+Port         Type              Board Name              FQBN                 Core
+/dev/ttyACM1 Serial Port <span class="o">(</span>USB<span class="o">)</span> Arduino/Genuino MKR1000 arduino:samd:mkr1000 arduino:samd
+</code></pre></div>
+<p>In this example, the MKR1000 board was recognized and from the output of the command you see the platform core called
+<code>arduino:samd</code> is the one that needs to be installed to make it work.</p>
+<p>If you see an <code>Unknown</code> board listed, uploading should still work as long as you identify the platform core and use the
+correct FQBN string. When a board is not detected for whatever reason, you can list all the supported boards and their
+FQBN strings by running the following:</p>
+<div class="highlight"><pre id="__code_7"><span></span><button class="md-clipboard md-icon" title="Copy to clipboard" data-clipboard-target="#__code_7 &gt; code"></button><code>$ arduino-cli board listall mkr
+Board Name              FQBN
+Arduino MKR FOX <span class="m">1200</span>    arduino:samd:mkrfox1200
+Arduino MKR GSM <span class="m">1400</span>    arduino:samd:mkrgsm1400
+Arduino MKR WAN <span class="m">1300</span>    arduino:samd:mkrwan1300
+Arduino MKR WiFi <span class="m">1010</span>   arduino:samd:mkrwifi1010
+Arduino MKRZERO         arduino:samd:mkrzero
+Arduino/Genuino MKR1000 arduino:samd:mkr1000
+</code></pre></div>
+<h2 id="install-the-core-for-your-board">Install the core for your board<a class="headerlink" href="https://arduino.github.io/arduino-cli/0.33/getting-started/#install-the-core-for-your-board" title="Permanent link">¶</a></h2>
+<p>To install the <code>arduino:samd</code> platform core, run the following:</p>
+<div class="highlight"><pre id="__code_8"><span></span><button class="md-clipboard md-icon" title="Copy to clipboard" data-clipboard-target="#__code_8 &gt; code"></button><code>$ arduino-cli core install arduino:samd
+Downloading tools...
+arduino:arm-none-eabi-gcc@4.8.3-2014q1 downloaded
+arduino:bossac@1.7.0 downloaded
+arduino:openocd@0.9.0-arduino6-static downloaded
+arduino:CMSIS@4.5.0 downloaded
+arduino:CMSIS-Atmel@1.1.0 downloaded
+arduino:arduinoOTA@1.2.0 downloaded
+Downloading cores...
+arduino:samd@1.6.19 downloaded
+Installing tools...
+Installing platforms...
+Results:
+arduino:samd@1.6.19 - Installed
+arduino:arm-none-eabi-gcc@4.8.3-2014q1 - Installed
+arduino:bossac@1.7.0 - Installed
+arduino:openocd@0.9.0-arduino6-static - Installed
+arduino:CMSIS@4.5.0 - Installed
+arduino:CMSIS-Atmel@1.1.0 - Installed
+arduino:arduinoOTA@1.2.0 - Installed
+</code></pre></div>
+<p>Now verify we have installed the core properly by running:</p>
+<div class="highlight"><pre id="__code_9"><span></span><button class="md-clipboard md-icon" title="Copy to clipboard" data-clipboard-target="#__code_9 &gt; code"></button><code tabindex="0">$ arduino-cli core list
+ID              Installed       Latest  Name
+arduino:samd    <span class="m">1</span>.6.19          <span class="m">1</span>.6.19  Arduino SAMD Boards <span class="o">(</span><span class="m">32</span>-bits ARM Cortex-M0+<span class="o">)</span>
+</code></pre></div>
+<p>Great! Now we are ready to compile and upload the sketch.</p>
+<h2 id="adding-3rd-party-cores">Adding 3rd party cores<a class="headerlink" href="https://arduino.github.io/arduino-cli/0.33/getting-started/#adding-3rd-party-cores" title="Permanent link">¶</a></h2>
+<p>If your board requires 3rd party core packages to work, you can list the URLs to additional package indexes in the
+Arduino CLI configuration file.</p>
+<p>For example, to add the ESP8266 core, edit the configuration file and change the <code>board_manager</code> settings as follows:</p>
+<div class="highlight"><pre id="__code_10"><span></span><button class="md-clipboard md-icon" title="Copy to clipboard" data-clipboard-target="#__code_10 &gt; code"></button><code><span class="nt">board_manager</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">additional_urls</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://arduino.esp8266.com/stable/package_esp8266com_index.json</span><span class="w"></span>
+</code></pre></div>
+<p>If you have your package indexes locally installed, you can list their file path in the Arduino CLI configuration file.</p>
+<p>For example, to add the NRF52832 core, edit the configuration file and change the <code>board_manager</code> settings as follows:</p>
+<div class="highlight"><pre id="__code_11"><span></span><button class="md-clipboard md-icon" title="Copy to clipboard" data-clipboard-target="#__code_11 &gt; code"></button><code><span class="nt">board_manager</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">additional_urls</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://arduino.esp8266.com/stable/package_esp8266com_index.json</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">file:///absolute/path/to/your/package_nrf52832_index.json</span><span class="w"></span>
+</code></pre></div>
+<p>From now on, commands supporting custom cores will automatically use the additional URL from the configuration file:</p>
+<div class="highlight"><pre id="__code_12"><span></span><button class="md-clipboard md-icon" title="Copy to clipboard" data-clipboard-target="#__code_12 &gt; code"></button><code>$ arduino-cli core update-index
+Updating index: package_index.json downloaded
+Updating index: package_esp8266com_index.json downloaded
+Updating index: package_nrf52832_index.json
+Updating index: package_index.json downloaded
+
+$ arduino-cli core search esp8266
+ID              Version Name
+esp8266:esp8266 <span class="m">2</span>.5.2   esp8266
+</code></pre></div>
+<p>Alternatively, you can pass a link to the additional package index file with the <code>--additional-urls</code> option, that has to
+be specified every time and for every command that operates on a 3rd party platform core, for example:</p>
+<div class="highlight"><pre id="__code_13"><span></span><button class="md-clipboard md-icon" title="Copy to clipboard" data-clipboard-target="#__code_13 &gt; code"></button><code tabindex="0">$ arduino-cli  core update-index --additional-urls https://arduino.esp8266.com/stable/package_esp8266com_index.json
+Updating index: package_esp8266com_index.json downloaded
+
+$ arduino-cli core search esp8266 --additional-urls https://arduino.esp8266.com/stable/package_esp8266com_index.json
+ID              Version Name
+esp8266:esp8266 <span class="m">2</span>.5.2   esp8266
+</code></pre></div>
+<p>The same applies to the additional package index file provided by file paths:</p>
+<div class="highlight"><pre id="__code_14"><span></span><button class="md-clipboard md-icon" title="Copy to clipboard" data-clipboard-target="#__code_14 &gt; code"></button><code tabindex="0">$ arduino-cli  core update-index --additional-urls file:///absolute/path/to/your/package_esp8266com_index.json
+Updating index: package_esp8266com_index.json downloaded
+
+$ arduino-cli core search esp8266 --additional-urls file:///absolute/path/to/your/package_esp8266com_index.json
+ID              Version Name
+esp8266:esp8266 <span class="m">2</span>.5.2   esp8266
+</code></pre></div>
+<h2 id="compile-and-upload-the-sketch">Compile and upload the sketch<a class="headerlink" href="https://arduino.github.io/arduino-cli/0.33/getting-started/#compile-and-upload-the-sketch" title="Permanent link">¶</a></h2>
+<p>To compile the sketch you run the <code>compile</code> command, passing the proper FQBN string:</p>
+<div class="highlight"><pre id="__code_15"><span></span><button class="md-clipboard md-icon" title="Copy to clipboard" data-clipboard-target="#__code_15 &gt; code"></button><code>$ arduino-cli compile --fqbn arduino:samd:mkr1000 MyFirstSketch
+Sketch uses <span class="m">9600</span> bytes <span class="o">(</span><span class="m">3</span>%<span class="o">)</span> of program storage space. Maximum is <span class="m">262144</span> bytes.
+</code></pre></div>
+<p>To upload the sketch to your board, run the following command, using the serial port your board is connected to:</p>
+<div class="highlight"><pre id="__code_16"><span></span><button class="md-clipboard md-icon" title="Copy to clipboard" data-clipboard-target="#__code_16 &gt; code"></button><code>$ arduino-cli upload -p /dev/ttyACM0 --fqbn arduino:samd:mkr1000 MyFirstSketch
+No new serial port detected.
+Atmel SMART device 0x10010005 found
+Device       : ATSAMD21G18A
+Chip ID      : <span class="m">10010005</span>
+Version      : v2.0 <span class="o">[</span>Arduino:XYZ<span class="o">]</span> Dec <span class="m">20</span> <span class="m">2016</span> <span class="m">15</span>:36:43
+Address      : <span class="m">8192</span>
+Pages        : <span class="m">3968</span>
+Page Size    : <span class="m">64</span> bytes
+Total Size   : 248KB
+Planes       : <span class="m">1</span>
+Lock Regions : <span class="m">16</span>
+Locked       : none
+Security     : <span class="nb">false</span>
+Boot Flash   : <span class="nb">true</span>
+BOD          : <span class="nb">true</span>
+BOR          : <span class="nb">true</span>
+Arduino      : FAST_CHIP_ERASE
+Arduino      : FAST_MULTI_PAGE_WRITE
+Arduino      : CAN_CHECKSUM_MEMORY_BUFFER
+Erase flash
+<span class="k">done</span> <span class="k">in</span> <span class="m">0</span>.784 seconds
+
+Write <span class="m">9856</span> bytes to flash <span class="o">(</span><span class="m">154</span> pages<span class="o">)</span>
+<span class="o">[==============================]</span> <span class="m">100</span>% <span class="o">(</span><span class="m">154</span>/154 pages<span class="o">)</span>
+<span class="k">done</span> <span class="k">in</span> <span class="m">0</span>.069 seconds
+
+Verify <span class="m">9856</span> bytes of flash with checksum.
+Verify successful
+<span class="k">done</span> <span class="k">in</span> <span class="m">0</span>.009 seconds
+CPU reset.
+</code></pre></div>
+<h2 id="add-libraries">Add libraries<a class="headerlink" href="https://arduino.github.io/arduino-cli/0.33/getting-started/#add-libraries" title="Permanent link">¶</a></h2>
+<p>If you need to add more functionalities to your sketch, chances are some of the libraries available in the Arduino
+ecosystem already provide what you need. For example, if you need a debouncing strategy to better handle button inputs,
+you can try searching for the <code>debouncer</code> keyword:</p>
+<div class="highlight"><pre id="__code_17"><span></span><button class="md-clipboard md-icon" title="Copy to clipboard" data-clipboard-target="#__code_17 &gt; code"></button><code tabindex="0">$ arduino-cli lib search debouncer
+Name: <span class="s2">"Debouncer"</span>
+    Author: hideakitai
+    Maintainer: hideakitai
+    Sentence: Debounce library <span class="k">for</span> Arduino
+    Paragraph: Debounce library <span class="k">for</span> Arduino
+    Website: https://github.com/hideakitai
+    Category: Timing
+    Architecture: *
+    Types: Contributed
+    Versions: <span class="o">[</span><span class="m">0</span>.1.0<span class="o">]</span>
+Name: <span class="s2">"FTDebouncer"</span>
+    Author: Ubi de Feo
+    Maintainer: Ubi de Feo, Sebastian Hunkeler
+    Sentence: An efficient, low footprint, fast pin debouncing library <span class="k">for</span> Arduino
+    Paragraph: This pin state supervisor manages debouncing of buttons and handles transitions between LOW and HIGH state, calling a <span class="k">function</span> and notifying your code of which pin has been activated or deactivated.
+    Website: https://github.com/ubidefeo/FTDebouncer
+    Category: Uncategorized
+    Architecture: *
+    Types: Contributed
+    Versions: <span class="o">[</span><span class="m">1</span>.3.0<span class="o">]</span>
+Name: <span class="s2">"SoftTimer"</span>
+    Author: Balazs Kelemen &lt;prampec+arduino@gmail.com&gt;
+    Maintainer: Balazs Kelemen &lt;prampec+arduino@gmail.com&gt;
+    Sentence: SoftTimer is a lightweight pseudo multitasking solution <span class="k">for</span> Arduino.
+    Paragraph: SoftTimer enables higher level Arduino programing, yet easy to use, and lightweight. You are often faced with the problem that you need to <span class="k">do</span> multiple tasks at the same time. In SoftTimer, the programmer creates Tasks that runs periodically. This library comes with a collection of handy tools like blinker, pwm, debouncer.
+    Website: https://github.com/prampec/arduino-softtimer
+    Category: Timing
+    Architecture: *
+    Types: Contributed
+    Versions: <span class="o">[</span><span class="m">3</span>.0.0, <span class="m">3</span>.1.0, <span class="m">3</span>.1.1, <span class="m">3</span>.1.2, <span class="m">3</span>.1.3, <span class="m">3</span>.1.5, <span class="m">3</span>.2.0<span class="o">]</span>
+</code></pre></div>
+<p>Our favourite is <code>FTDebouncer</code>, let's install it by running:</p>
+<div class="highlight"><pre id="__code_18"><span></span><button class="md-clipboard md-icon" title="Copy to clipboard" data-clipboard-target="#__code_18 &gt; code"></button><code>$ arduino-cli lib install FTDebouncer
+FTDebouncer depends on FTDebouncer@1.3.0
+Downloading FTDebouncer@1.3.0...
+FTDebouncer@1.3.0 downloaded
+Installing FTDebouncer@1.3.0...
+Installed FTDebouncer@1.3.0
+</code></pre></div>
+<h2 id="using-the-daemon-mode-and-the-grpc-interface">Using the <code>daemon</code> mode and the gRPC interface<a class="headerlink" href="https://arduino.github.io/arduino-cli/0.33/getting-started/#using-the-daemon-mode-and-the-grpc-interface" title="Permanent link">¶</a></h2>
+<p>Arduino CLI can be launched as a gRPC server via the <code>daemon</code> command.</p>
+<p>The <a href="https://github.com/arduino/arduino-cli/blob/master/client_example">client_example</a> folder contains a sample client code that shows how to interact with the gRPC server. Available
+services and messages are detailed in the <a href="https://arduino.github.io/arduino-cli/0.33/rpc/commands/">gRPC reference</a> pages.</p>
+<p>To provide observability for the gRPC server activities besides logs, the <code>daemon</code> mode activates and exposes by default
+a <a href="https://prometheus.io/">Prometheus</a> endpoint (<a href="http://localhost:9090/metrics">http://localhost:9090/metrics</a>) that can be fetched for metrics data
+like:</p>
+<div class="highlight"><pre id="__code_19"><span></span><button class="md-clipboard md-icon" title="Copy to clipboard" data-clipboard-target="#__code_19 &gt; code"></button><code tabindex="0"># TYPE daemon_compile counter
+daemon_compile{buildProperties="",exportFile="",fqbn="arduino:samd:mkr1000",installationID="ed6f1f22-1fbe-4b1f-84be-84d035b6369c",jobs="0",libraries="",preprocess="false",quiet="false",showProperties="false",sketchPath="5ff767c6fa5a91230f5cb4e267c889aa61489ab2c4f70f35f921f934c1462cb6",success="true",verbose="true",vidPid="",warnings=""} 1 1580385724726
+
+# TYPE daemon_board_list counter
+daemon_board_list{installationID="ed6f1f22-1fbe-4b1f-84be-84d035b6369c",success="true"} 1 1580385724833
+</code></pre></div>
+<p>The metrics settings are exposed via the <code>metrics</code> section in the CLI configuration:</p>
+<div class="highlight"><pre id="__code_20"><span></span><button class="md-clipboard md-icon" title="Copy to clipboard" data-clipboard-target="#__code_20 &gt; code"></button><code><span class="nt">metrics</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">  </span><span class="nt">addr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">:9090</span><span class="w"></span>
+</code></pre></div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="https://arduino.github.io/arduino-cli/0.33/UPGRADING/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Upgrading" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Upgrading
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="https://arduino.github.io/arduino-cli/0.33/command-line-completion/" class="md-footer__link md-footer__link--next" aria-label="Next: Command line completion" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Command line completion
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright 2020 ARDUINO SA (http://www.arduino.cc/)
+          </div>
+        
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs
+          </a>
+        
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.fcfe8b6d.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="./Arduino CLI_files/bundle.b1047164.min.js.download"></script>
+      
+    
+  
+</body></html>
