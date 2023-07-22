@@ -4,7 +4,7 @@ void setup() {
 
 void loop() {
     Serial.println("HELLO WORLD");
-    delay(1000);
+    delay(3000);
 
 
 }
