@@ -6,7 +6,7 @@ I have used <b>Visual Studio Code for 20% (Newer) of the Projects</b> with the A
 This Code has been [licensed](LICENSE).</b>
 
 
-<b>[Projects](PROJECTS)</b>:-
+<b>[Projects](https://github.com/PranavVerma-droid/Arduino-IDE-Repo/tree/main/ARDUINO/PROJECTS)</b>:-
 
 1. WIRELESS-HOME-SECURITY-SYSTEM (MOTION DETECTION)
 2. ESP8266 WEB SERVER
