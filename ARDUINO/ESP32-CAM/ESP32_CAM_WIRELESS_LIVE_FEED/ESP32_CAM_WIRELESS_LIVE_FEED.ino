@@ -8,9 +8,9 @@
 #include "soc/rtc_cntl_reg.h"  //disable brownout problems
 #include "esp_http_server.h"
 
-//Replace with your network credentials
-const char* ssid = "Pranav Outsider";
-const char* password = "112345678";
+const char* ssidList[] = {"Airtel Lockdown", "SagarFF"};  // Add the names of your Wi-Fi networks here
+const char* passwordList[] = {"11234567", "Espan98100"};  // Add the passwords for your Wi-Fi networks here
+int numNetworks = sizeof(ssidList) / sizeof(ssidList[0]);
 
 #define PART_BOUNDARY "123456789000000000000987654321"
 
@@ -183,12 +183,50 @@ void startCameraServer(){
   }
 }
 
+void connectToStrongestNetwork() {
+  int strongestSignal = -100;  // Initialize with a low value
+  int selectedNetwork = -1;
+
+  for (int i = 0; i < numNetworks; i++) {
+    WiFi.begin(ssidList[i], passwordList[i]);
+    delay(1000);  // Wait for connection
+
+    int signalStrength = WiFi.RSSI();
+    Serial.printf("Signal strength for %s: %ddBm\n", ssidList[i], signalStrength);
+
+    if (signalStrength > strongestSignal) {
+      strongestSignal = signalStrength;
+      selectedNetwork = i;
+    }
+
+    WiFi.disconnect(true);  // Disconnect from the current network
+    delay(1000);  // Wait before attempting the next network
+  }
+
+  if (selectedNetwork != -1) {
+    Serial.printf("Connecting to the strongest network: %s\n", ssidList[selectedNetwork]);
+    WiFi.begin(ssidList[selectedNetwork], passwordList[selectedNetwork]);
+    while (WiFi.status() != WL_CONNECTED) {
+      delay(500);
+      Serial.print(".");
+    }
+    Serial.println("");
+    Serial.println("WiFi connected");
+    Serial.print("Camera Stream Ready! Go to: http://");
+    Serial.print(WiFi.localIP());
+  } else {
+    Serial.println("No suitable network found.");
+  }
+}
+
 void setup() {
   WRITE_PERI_REG(RTC_CNTL_BROWN_OUT_REG, 0); //disable brownout detector
- 
+
   Serial.begin(115200);
   Serial.setDebugOutput(false);
-  
+
+  connectToStrongestNetwork();  // Call the function to connect to the strongest network
+
   camera_config_t config;
   config.ledc_channel = LEDC_CHANNEL_0;
   config.ledc_timer = LEDC_TIMER_0;
@@ -209,36 +247,28 @@ void setup() {
   config.pin_pwdn = PWDN_GPIO_NUM;
   config.pin_reset = RESET_GPIO_NUM;
   config.xclk_freq_hz = 20000000;
-  config.pixel_format = PIXFORMAT_JPEG; 
-  
+  config.pixel_format = PIXFORMAT_JPEG;
+
   if(psramFound()){
     config.frame_size = FRAMESIZE_UXGA;
     config.jpeg_quality = 10;
     config.fb_count = 2;
   } else {
-    config.frame_size = FRAMESIZE_SVGA;
-    config.jpeg_quality = 12;
+    config.frame_size = FRAMESIZE_VGA;
+    config.jpeg_quality = 6;
     config.fb_count = 1;
   }
-  
+
   // Camera init
   esp_err_t err = esp_camera_init(&config);
   if (err != ESP_OK) {
     Serial.printf("Camera init failed with error 0x%x", err);
     return;
   }
-  // Wi-Fi connection
-  WiFi.begin(ssid, password);
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.print(".");
-  }
-  Serial.println("");
-  Serial.println("WiFi connected");
-  
+
   Serial.print("Camera Stream Ready! Go to: http://");
   Serial.print(WiFi.localIP());
-  
+
   // Start streaming web server
   startCameraServer();
 }
