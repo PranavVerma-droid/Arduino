@@ -4,23 +4,17 @@
 #include "img_converters.h"
 #include "Arduino.h"
 #include "fb_gfx.h"
-#include "soc/soc.h" //disable brownout problems
-#include "soc/rtc_cntl_reg.h"  //disable brownout problems
+#include "soc/soc.h"
+#include "soc/rtc_cntl_reg.h" 
 #include "esp_http_server.h"
 
-const char* ssidList[] = {"Airtel Lockdown", "SagarFF"};  // Add the names of your Wi-Fi networks here
-const char* passwordList[] = {"11234567", "Espan98100"};  // Add the passwords for your Wi-Fi networks here
-int numNetworks = sizeof(ssidList) / sizeof(ssidList[0]);
+
+//Replace with your network credentials
+const char* ssid = "Airtel Lockdown";
+const char* password = "Espan98100";
 
 #define PART_BOUNDARY "123456789000000000000987654321"
 
-// This project was tested with the AI Thinker Model, M5STACK PSRAM Model and M5STACK WITHOUT PSRAM
-#define CAMERA_MODEL_AI_THINKER
-//#define CAMERA_MODEL_M5STACK_PSRAM
-//#define CAMERA_MODEL_M5STACK_WITHOUT_PSRAM
-
-// Not tested with this model
-//#define CAMERA_MODEL_WROVER_KIT
 
 
   #define PWDN_GPIO_NUM     32
@@ -40,6 +34,7 @@ int numNetworks = sizeof(ssidList) / sizeof(ssidList[0]);
   #define VSYNC_GPIO_NUM    25
   #define HREF_GPIO_NUM     23
   #define PCLK_GPIO_NUM     22
+
 
 static const char* _STREAM_CONTENT_TYPE = "multipart/x-mixed-replace;boundary=" PART_BOUNDARY;
 static const char* _STREAM_BOUNDARY = "\r\n--" PART_BOUNDARY "\r\n";
@@ -123,50 +118,12 @@ void startCameraServer(){
   }
 }
 
-void connectToStrongestNetwork() {
-  int strongestSignal = -100;  // Initialize with a low value
-  int selectedNetwork = -1;
-
-  for (int i = 0; i < numNetworks; i++) {
-    WiFi.begin(ssidList[i], passwordList[i]);
-    delay(1000);  // Wait for connection
-
-    int signalStrength = WiFi.RSSI();
-    Serial.printf("Signal strength for %s: %ddBm\n", ssidList[i], signalStrength);
-
-    if (signalStrength > strongestSignal) {
-      strongestSignal = signalStrength;
-      selectedNetwork = i;
-    }
-
-    WiFi.disconnect(true);  // Disconnect from the current network
-    delay(1000);  // Wait before attempting the next network
-  }
-
-  if (selectedNetwork != -1) {
-    Serial.printf("Connecting to the strongest network: %s\n", ssidList[selectedNetwork]);
-    WiFi.begin(ssidList[selectedNetwork], passwordList[selectedNetwork]);
-    while (WiFi.status() != WL_CONNECTED) {
-      delay(500);
-      Serial.print(".");
-    }
-    Serial.println("");
-    Serial.println("WiFi connected");
-    Serial.print("Camera Stream Ready! Go to: http://");
-    Serial.print(WiFi.localIP());
-  } else {
-    Serial.println("No suitable network found.");
-  }
-}
-
 void setup() {
   WRITE_PERI_REG(RTC_CNTL_BROWN_OUT_REG, 0); //disable brownout detector
-
+ 
   Serial.begin(115200);
   Serial.setDebugOutput(false);
-
-  connectToStrongestNetwork();  // Call the function to connect to the strongest network
-
+  
   camera_config_t config;
   config.ledc_channel = LEDC_CHANNEL_0;
   config.ledc_timer = LEDC_TIMER_0;
@@ -187,28 +144,51 @@ void setup() {
   config.pin_pwdn = PWDN_GPIO_NUM;
   config.pin_reset = RESET_GPIO_NUM;
   config.xclk_freq_hz = 20000000;
-  config.pixel_format = PIXFORMAT_JPEG;
+  config.pixel_format = PIXFORMAT_JPEG; 
+  
 
+
+  // Adjust Video Quality Here
+
+  //Tiers of Adjustment:
+  // 1. UXGA - Best Quality, Only Works with PSRAM models (AI Thinker has PSRAM)
+  // 2. SXGA - Good Quality, Only Works with PSRAM models (AI Thinker has PSRAM)
+  // 3. XGA - Good Quality, Works with PSRAM and non-PSRAM models
+  // 4. SVGA - Good Quality, Works with PSRAM and non-PSRAM models
+  // 5. VGA - Pretty Bad Quality, Works with PSRAM and non-PSRAM models
+  // 6. CIF - Pretty Bad Quality, Works with PSRAM and non-PSRAM models
+  // 7. QVGA - Pretty Bad Quality, Works with PSRAM and non-PSRAM models
+  // 8. HQVGA - Pretty Bad Quality, Works with PSRAM and non-PSRAM models
+  // 9. QQVGA - Pretty Bad Quality, Works with PSRAM and non-PSRAM models
+  
   if(psramFound()){
     config.frame_size = FRAMESIZE_SVGA;
-    config.jpeg_quality = 8;
+    config.jpeg_quality = 6;
     config.fb_count = 2;
   } else {
     config.frame_size = FRAMESIZE_VGA;
-    config.jpeg_quality = 6;
+    config.jpeg_quality = 4;
     config.fb_count = 1;
   }
-
+  
   // Camera init
   esp_err_t err = esp_camera_init(&config);
   if (err != ESP_OK) {
     Serial.printf("Camera init failed with error 0x%x", err);
     return;
   }
-
+  // Wi-Fi connection
+  WiFi.begin(ssid, password);
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.println("");
+  Serial.println("WiFi connected");
+  
   Serial.print("Camera Stream Ready! Go to: http://");
   Serial.print(WiFi.localIP());
-
+  
   // Start streaming web server
   startCameraServer();
 }

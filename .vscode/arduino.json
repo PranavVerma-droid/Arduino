@@ -2,5 +2,6 @@
     "board": "esp32:esp32:esp32cam",
     "port": "COM5",
     "sketch": "ARDUINO\\ESP32-CAM\\ESP32_CAM_WIRELESS_LIVE_FEED\\ESP32_CAM_WIRELESS_LIVE_FEED.ino",
-    "configuration": "CPUFreq=240,FlashMode=qio,PartitionScheme=huge_app,FlashFreq=80,DebugLevel=none,EraseFlash=none"
+    "configuration": "CPUFreq=240,FlashMode=qio,PartitionScheme=huge_app,FlashFreq=40,DebugLevel=none,EraseFlash=all",
+    "output": ".trash/ArduinoOutput"
 }
