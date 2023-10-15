@@ -1,7 +1,6 @@
 {
-    "board": "esp32:esp32:esp32cam",
+    "board": "arduino:avr:uno",
     "port": "COM5",
-    "sketch": "ARDUINO\\ESP32-CAM\\ESP32_CAM_WIRELESS_LIVE_FEED\\ESP32_CAM_WIRELESS_LIVE_FEED.ino",
-    "configuration": "CPUFreq=240,FlashMode=qio,PartitionScheme=huge_app,FlashFreq=40,DebugLevel=none,EraseFlash=all",
+    "sketch": "ARDUINO/BASICS/Blink/Blink.ino",
     "output": ".trash/ArduinoOutput"
 }
