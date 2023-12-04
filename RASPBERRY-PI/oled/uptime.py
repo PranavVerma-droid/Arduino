@@ -24,7 +24,7 @@ HEIGHT = 32  # Adjusted for a 128x32 screen
 BORDER = 5
 
 # Display Refresh
-LOOPTIME = 1.0
+LOOPTIME = 1
 
 # Use for I2C.
 i2c = board.I2C()
@@ -60,35 +60,46 @@ font = ImageFont.load_default()
 # Alternatively load a TTF font.  Make sure the .ttf font file is in the same directory as the python script!
 # Some other nice fonts to try: http://www.dafont.com/bitmap.php
 # Icons website: https://icons8.com/line-awesome
-font = ImageFont.truetype('/home/pi/oled/PixelOperator.ttf', 15)
-icon_font = ImageFont.truetype('/home/pi/oled/lineawesome-webfont.ttf', 18)
+font = ImageFont.truetype('/home/pi/github/arduino-ide/RASPBERRY-PI/oled/PixelOperator.ttf', 15)
+icon_font = ImageFont.truetype('/home/pi/github/arduino-ide/RASPBERRY-PI/oled/lineawesome-webfont.ttf', 18)
+
+uptime_display = True
+last_switch_time = time.time()
 
 while True:
     # Draw a black filled box to clear the image.
     draw.rectangle((0, 0, width, height), outline=0, fill=0)
 
+    if time.time() - last_switch_time >= 60:
+        uptime_display = not uptime_display
+        last_switch_time = time.time()
+
+
+    if uptime_display:
     # Shell scripts for system monitoring from here: https://unix.stackexchange.com/questions/119126/command-to-display-memory-usage-disk-usage-and-cpu-load
-    cmd_uptime = "uptime -p"
-    uptime = subprocess.check_output(cmd_uptime, shell=True)
+        cmd_uptime = "uptime -p"
+        uptime = subprocess.check_output(cmd_uptime, shell=True)
 
-    cmd_cpu = "top -bn1 | grep load | awk '{printf \"%.2f%%\", $(NF-2)}'"
-    cpu_percentage = subprocess.check_output(cmd_cpu, shell=True)
+        cmd_cpu = "top -bn1 | grep load | awk '{printf \"%.2f%%\", $(NF-2)}'"
+        cpu_percentage = subprocess.check_output(cmd_cpu, shell=True)
 
-    cmd_ram = "free -m | awk 'NR==2{printf \"%.2f%%\", $3*100/$2 }'"
-    ram_percentage = subprocess.check_output(cmd_ram, shell=True)
+        cmd_ram = "free -m | awk 'NR==2{printf \"%.2f%%\", $3*100/$2 }'"
+        ram_percentage = subprocess.check_output(cmd_ram, shell=True)
 
-    disk_usage = shutil.disk_usage("/")
-    temperature = subprocess.check_output("vcgencmd measure_temp", shell=True).decode("utf-8").strip()
-
-
-    # Text
     # Text Uptime
-    draw.text((0, 0), "Uptime: " + str(uptime, 'utf-8'), font=font, fill=255)
+        draw.text((0, 0), "Uptime: " + str(uptime, 'utf-8'), font=font, fill=255)
     # Text CPU and RAM percentage
-    draw.text((0, 13), "CPU: " + str(cpu_percentage, 'utf-8') + " RAM: " + str(ram_percentage, 'utf-8'), font=font, fill=255)
+        draw.text((0, 13), "CPU: " + str(cpu_percentage, 'utf-8') + " RAM: " + str(ram_percentage, 'utf-8'), font=font, fill=255)
+    else:
+    # Shell script for temperature
+        cmd_temp = "vcgencmd measure_temp | cut -d '=' -f 2"
+        temperature = subprocess.check_output(cmd_temp, shell=True).decode("utf-8").strip()
 
-    draw.text((0, 2 * 13), f"Disk: {disk_usage.used / 32GB Temp: {temperature}", font=font, fill=255)
-    # Display image.
+    # Text Temperature
+        draw.text((0, 0), f" Temp: {temperature}", font=font, fill=255)
+
+
+
     oled.image(image)
     oled.show()
     time.sleep(LOOPTIME)
