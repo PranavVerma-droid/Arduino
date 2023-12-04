@@ -11,6 +11,9 @@ from PIL import Image, ImageDraw, ImageFont
 import adafruit_ssd1306
 
 import subprocess
+import socket
+import shutil
+
 
 # Define the Reset Pin
 oled_reset = digitalio.DigitalInOut(board.D4)
@@ -74,12 +77,17 @@ while True:
     cmd_ram = "free -m | awk 'NR==2{printf \"%.2f%%\", $3*100/$2 }'"
     ram_percentage = subprocess.check_output(cmd_ram, shell=True)
 
+    disk_usage = shutil.disk_usage("/")
+    temperature = subprocess.check_output("vcgencmd measure_temp", shell=True).decode("utf-8").strip()
+
+
     # Text
     # Text Uptime
     draw.text((0, 0), "Uptime: " + str(uptime, 'utf-8'), font=font, fill=255)
     # Text CPU and RAM percentage
-    draw.text((0, top + 13), "CPU: " + str(cpu_percentage, 'utf-8') + " RAM: " + str(ram_percentage, 'utf-8'), font=font, fill=255)
+    draw.text((0, 13), "CPU: " + str(cpu_percentage, 'utf-8') + " RAM: " + str(ram_percentage, 'utf-8'), font=font, fill=255)
 
+    draw.text((0, 2 * 13), f"Disk: {disk_usage.used / 32GB Temp: {temperature}", font=font, fill=255)
     # Display image.
     oled.image(image)
     oled.show()
