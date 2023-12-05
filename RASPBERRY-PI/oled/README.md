@@ -2,6 +2,12 @@
 
 This directory uses python3 to show some basic stats to a 0.91 inch OLED Screen (128 x 32)
 
+Pin Conntections: <br>
+ - VCC (Display) -> 3v3 (RPI)
+ - GND (Display) -> GND (RPI)
+ - SDA (Display) -> SDA (RPI)
+ - SCK (Display) -> SCL (RPI)
+
 To Start, Run the Following Commands:
 
 `sudo apt-get update`

@@ -63,22 +63,25 @@ font = ImageFont.load_default()
 font = ImageFont.truetype('/home/pi/github/arduino-ide/RASPBERRY-PI/oled/PixelOperator.ttf', 15)
 icon_font = ImageFont.truetype('/home/pi/github/arduino-ide/RASPBERRY-PI/oled/lineawesome-webfont.ttf', 18)
 
-uptime_display = True
-last_switch_time = time.time()
+section = 1
+counter = 5
+
+count_time = 5
+max_sections = 4
 
 while True:
-    # Draw a black filled box to clear the image.
     draw.rectangle((0, 0, width, height), outline=0, fill=0)
 
-    if time.time() - last_switch_time >= 60:
-        uptime_display = not uptime_display
-        last_switch_time = time.time()
 
-
-    if uptime_display:
-    # Shell scripts for system monitoring from here: https://unix.stackexchange.com/questions/119126/command-to-display-memory-usage-disk-usage-and-cpu-load
+    if section == 1:
         cmd_uptime = "uptime -p"
         uptime = subprocess.check_output(cmd_uptime, shell=True)
+
+        draw.text((0, 0), "Uptime: ", font=font, fill=255)
+        draw.text((0, 13), str(uptime, 'utf-8'), font=font, fill=255)
+    elif section == 2:
+        cmd_temp = "vcgencmd measure_temp | cut -d '=' -f 2"
+        temperature = subprocess.check_output(cmd_temp, shell=True).decode("utf-8").strip()
 
         cmd_cpu = "top -bn1 | grep load | awk '{printf \"%.2f%%\", $(NF-2)}'"
         cpu_percentage = subprocess.check_output(cmd_cpu, shell=True)
@@ -86,19 +89,26 @@ while True:
         cmd_ram = "free -m | awk 'NR==2{printf \"%.2f%%\", $3*100/$2 }'"
         ram_percentage = subprocess.check_output(cmd_ram, shell=True)
 
-    # Text Uptime
-        draw.text((0, 0), "Uptime: " + str(uptime, 'utf-8'), font=font, fill=255)
-    # Text CPU and RAM percentage
+
+        draw.text((0, 0), f"Temp: {temperature}", font=font, fill=255)
         draw.text((0, 13), "CPU: " + str(cpu_percentage, 'utf-8') + " RAM: " + str(ram_percentage, 'utf-8'), font=font, fill=255)
+    elif section == 3:
+        draw.text((0, 0), f"Pwnagotchi!", font=font, fill=255)
+        draw.text((0, 13), f"Hack the Planet!", font=font, fill=255)
+    elif section == 4:
+        draw.text((0, 0), f"Made By:", font=font, fill=255)
+        draw.text((0, 13), f"PranavVerma-droid", font=font, fill=255)
+
+    counter = counter - 1
+
+    if section == max_sections:
+        if counter == 0:
+            section = 1
+            counter = count_time
     else:
-    # Shell script for temperature
-        cmd_temp = "vcgencmd measure_temp | cut -d '=' -f 2"
-        temperature = subprocess.check_output(cmd_temp, shell=True).decode("utf-8").strip()
-
-    # Text Temperature
-        draw.text((0, 0), f" Temp: {temperature}", font=font, fill=255)
-
-
+        if counter == 0:
+            section = section + 1
+            counter = count_time
 
     oled.image(image)
     oled.show()
