@@ -6,7 +6,7 @@ import time
 import board
 import busio
 import digitalio
-
+import random
 from PIL import Image, ImageDraw, ImageFont
 import adafruit_ssd1306
 
@@ -61,25 +61,40 @@ font = ImageFont.load_default()
 # Some other nice fonts to try: http://www.dafont.com/bitmap.php
 # Icons website: https://icons8.com/line-awesome
 font = ImageFont.truetype('/home/pi/github/arduino-ide/RASPBERRY-PI/oled/PixelOperator.ttf', 15)
+# font_enlarged = font = ImageFont.truetype('/home/pi/github/arduino-ide/RASPBERRY-PI/oled/PixelOperator.ttf', 21)
 icon_font = ImageFont.truetype('/home/pi/github/arduino-ide/RASPBERRY-PI/oled/lineawesome-webfont.ttf', 18)
 
-section = 1
-counter = 5
-
-count_time = 5
+count_time = 4
 max_sections = 4
+
+section = 1
+counter = count_time
+
+draw.text((0, 0), "(•_•)", font=font, fill=255)
+
+oled.image(image)
+oled.show()
+time.sleep(5)
+
+draw.rectangle((0, 0, width, height), outline=0, fill=0)
+
+draw.text((0, 0), f"Starting Up......", font=font, fill=255)
+
+oled.image(image)
+oled.show()
+time.sleep(10)
 
 while True:
     draw.rectangle((0, 0, width, height), outline=0, fill=0)
 
 
-    if section == 1:
+    if section == 3:
         cmd_uptime = "uptime -p"
         uptime = subprocess.check_output(cmd_uptime, shell=True)
 
         draw.text((0, 0), "Uptime: ", font=font, fill=255)
         draw.text((0, 13), str(uptime, 'utf-8'), font=font, fill=255)
-    elif section == 2:
+    elif section == 4:
         cmd_temp = "vcgencmd measure_temp | cut -d '=' -f 2"
         temperature = subprocess.check_output(cmd_temp, shell=True).decode("utf-8").strip()
 
@@ -92,12 +107,14 @@ while True:
 
         draw.text((0, 0), f"Temp: {temperature}", font=font, fill=255)
         draw.text((0, 13), "CPU: " + str(cpu_percentage, 'utf-8') + " RAM: " + str(ram_percentage, 'utf-8'), font=font, fill=255)
-    elif section == 3:
+    elif section == 1:
         draw.text((0, 0), f"Pwnagotchi!", font=font, fill=255)
         draw.text((0, 13), f"Hack the Planet!", font=font, fill=255)
-    elif section == 4:
+    elif section == 2:
         draw.text((0, 0), f"Made By:", font=font, fill=255)
         draw.text((0, 13), f"PranavVerma-droid", font=font, fill=255)
+
+
 
     counter = counter - 1
 
