@@ -9,6 +9,7 @@ import digitalio
 import random
 from PIL import Image, ImageDraw, ImageFont
 import adafruit_ssd1306
+import os
 
 import subprocess
 import socket
@@ -57,12 +58,21 @@ x = 0
 # Load default font.
 font = ImageFont.load_default()
 
+# Current Directory
+current_directory = os.getcwd()
+
+font_filename = "PixelOperator.ttf"
+icon_font_filename = "lineawesome-webfont.ttf"
+
+font_path = os.path.join(current_directory, font_filename)
+icon_font_path = os.path.join(current_directory, icon_font_filename)
+
 # Alternatively load a TTF font.  Make sure the .ttf font file is in the same directory as the python script!
 # Some other nice fonts to try: http://www.dafont.com/bitmap.php
 # Icons website: https://icons8.com/line-awesome
-font = ImageFont.truetype('/home/pi/github/arduino-ide/RASPBERRY-PI/oled/PixelOperator.ttf', 15)
+font = ImageFont.truetype(font_path, 15)
 # font_enlarged = font = ImageFont.truetype('/home/pi/github/arduino-ide/RASPBERRY-PI/oled/PixelOperator.ttf', 21)
-icon_font = ImageFont.truetype('/home/pi/github/arduino-ide/RASPBERRY-PI/oled/lineawesome-webfont.ttf', 18)
+icon_font = ImageFont.truetype(icon_font_path, 18)
 
 count_time = 4
 max_sections = 4
@@ -108,7 +118,7 @@ while True:
         draw.text((0, 0), f"Temp: {temperature}", font=font, fill=255)
         draw.text((0, 13), "CPU: " + str(cpu_percentage, 'utf-8') + " RAM: " + str(ram_percentage, 'utf-8'), font=font, fill=255)
     elif section == 1:
-        draw.text((0, 0), f"Pwnagotchi!", font=font, fill=255)
+        draw.text((0, 0), f"Server All", font=font, fill=255)
         draw.text((0, 13), f"Hack the Planet!", font=font, fill=255)
     elif section == 2:
         draw.text((0, 0), f"Made By:", font=font, fill=255)

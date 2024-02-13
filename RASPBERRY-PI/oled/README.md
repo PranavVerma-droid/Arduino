@@ -29,6 +29,6 @@ To enable I2C communication, use the configuration utility by entering:
 `sudo pip3 install adafruit-circuitpython-ssd1306`
 `sudo apt-get install python3-pil`
 
-Thats it! Now run python3 uptime.py to see the Uptime of the Machine & CPU and RAM!
+Thats it! Now run `python3 uptime.py` to see the Uptime of the Machine & CPU and RAM!
 
-
+(If you get an error: error:` externally-managed-environment` with pip, you can use `--break-system-packages` argument while installing the pip packages.
