@@ -7,7 +7,7 @@ Programming STM32 Using Arduino IDE and STM32duino (Inbuilt Bootloader).
 - https://www.instructables.com/PID-Based-Line-Following-Robot-With-POLALU-QTR-8RC/
 
 ## Components
-- [STM32 (Blue Pill)](https://peterjazz.com/blognew/wp-content/uploads/2021/02/stm32-blue-pill.jpg)
+- Arduino Nano / Arduino Pro Mini
 - [Polulu QTR-8RC Sensor Array](https://ifuturetech.org/product/qtr-8rc-reflectance-sensor-array/)
 - Motor Driver (TB6612FNG)
 - N20 12V 600 RPM Motors
