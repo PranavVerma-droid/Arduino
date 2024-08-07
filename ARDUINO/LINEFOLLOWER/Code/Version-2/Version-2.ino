@@ -1,15 +1,37 @@
-//Code Written by PranavVerma-droid
-//Comments Written by ChatGPT.
+// Code Written by PranavVerma-droid
+// Comments Written by ChatGPT.
+
+/*
+Pin Connections:
+  QTR Sensor:
+    Sensor 1: A0
+    Sensor 2: A1
+    Sensor 3: A2
+    Sensor 4: A3
+    Sensor 5: A4
+    Sensor 6: A5
+    Sensor 7: A6
+    Sensor 8: A7
+    Emitter: D2
+  Motor Driver:
+    Right Motor Control Pin 1: D3
+    Right Motor Control Pin 2: D4
+    Right Motor PWM Pin: D5
+    Left Motor Control Pin 1: D12
+    Left Motor Control Pin 2: D13
+    Left Motor PWM Pin: D11
+    Motor Power Control Pin: D8   
+*/
 
 /* Tips for PID Calibration by ChatGPT:
 -   Start with a small Kp value and increase it until the robot starts following the line with some oscillation.
 -   Gradually increase the Kd value to reduce the oscillations.
 -   Fine-tune both values to achieve smooth line-following behavior. */
 
-#include <QTRSensors.h>
-
 #define Kp 0 // Proportional gain, experiment to find a suitable value
-#define Kd 0 // Derivative gain, experiment to find a suitable value (Note: Kp < Kd) 
+#define Kd 0 // Derivative gain, experiment to find a suitable value (Note: Kp < Kd)
+
+#include <QTRSensors.h>
 
 #define rightMaxSpeed 200 // Max speed for the right motor
 #define leftMaxSpeed 200 // Max speed for the left motor
@@ -41,24 +63,25 @@ void setup() {
   pinMode(motorPower, OUTPUT);
   pinMode(LED_BUILTIN, OUTPUT);
 
-  digitalWrite(motorPower, LOW);
-  digitalWrite(LED_BUILTIN, LOW);
+  digitalWrite(motorPower, LOW); // Initially Switch off the Motors
+  digitalWrite(LED_BUILTIN, LOW);// Initially Switch off the LED
   Serial.begin(9600);
 
-  qtrrc.setTypeAnalog();
-  qtrrc.setSensorPins((const uint8_t[]){A0, A1, A2, A3, A4, A5, A6, A7}, NUM_SENSORS);
-  qtrrc.setEmitterPin(EMITTER_PIN); 
 
-  // Calibrate sensors
+  qtrrc.setTypeAnalog(); // Set Type Analog for QTR
+  qtrrc.setSensorPins((const uint8_t[]){A0, A1, A2, A3, A4, A5, A6, A7}, NUM_SENSORS); // Define Pins for QTR
+  qtrrc.setEmitterPin(EMITTER_PIN); // Define Emitter Pin for QTR
+
+  // Calibrate Sensors
   for (int i = 0; i < 100; i++) {
+    digitalWrite(LED_BUILTIN, HIGH); // Turn on Inbuilt LED for Debugging
     qtrrc.calibrate();
     delay(20);
   }
 
-  digitalWrite(motorPower, LOW);
+  digitalWrite(LED_BUILTIN, LOW); 
   delay(2000);
 
-  
   // Debugging
   for (int i = 0; i < NUM_SENSORS; i++) {
     Serial.print(qtrrc.calibrationOn.minimum[i]);
@@ -87,7 +110,7 @@ void loop() {
   int rightMotorSpeed = rightBaseSpeed + motorSpeed;
   int leftMotorSpeed = leftBaseSpeed - motorSpeed;
 
-  // Constrain motor speeds to valid range
+  // Valid Motor Speed Range
   rightMotorSpeed = constrain(rightMotorSpeed, 0, rightMaxSpeed);
   leftMotorSpeed = constrain(leftMotorSpeed, 0, leftMaxSpeed);
 
@@ -100,16 +123,4 @@ void loop() {
   digitalWrite(leftMotor1, HIGH);
   digitalWrite(leftMotor2, LOW);
   analogWrite(leftMotorPWM, leftMotorSpeed);
-}
-
-void wait() {
-  
-}
-
-void autoPID() {
-  //WIP
-}
-
-void waiting(){
-  
 }

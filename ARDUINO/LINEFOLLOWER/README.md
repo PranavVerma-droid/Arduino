@@ -18,4 +18,4 @@ Programming STM32 Using Arduino IDE and STM32duino (Inbuilt Bootloader).
 - USB to Serial Converter (CH340G)
 - Jumper Wires
 - Vero Board
-- Modular Vero Board Connectors
+- Female Berg Strip
