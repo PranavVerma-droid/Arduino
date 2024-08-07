@@ -1,7 +1,6 @@
 # Line Follower (PID)
 
-Making an Line Follower using STM32 (Blue Pill) and Polulu QTR-8RC sensor array.
-Programming STM32 Using Arduino IDE and STM32duino (Inbuilt Bootloader).
+Making an Line Follower using Arduino Nano or Arduino Pro Mini and Polulu QTR-8RC sensor array.
 
 ## References
 - https://www.instructables.com/PID-Based-Line-Following-Robot-With-POLALU-QTR-8RC/
