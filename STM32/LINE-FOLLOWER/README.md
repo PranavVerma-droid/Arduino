@@ -2,7 +2,7 @@
 
 # Getting Started
 
-<img align="right" width="440" src="https://user-images.githubusercontent.com/53112883/109350542-b6a3b700-7888-11eb-841b-921b91522507.png">
+<img align="right" width="440" src="Circuit.png">
 
 ### Components
 - Arduino Nano / Arduino Pro Mini
