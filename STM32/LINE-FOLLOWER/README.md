@@ -5,7 +5,7 @@
 <img align="right" width="440" src="Circuit.png">
 
 ### Components
-- Arduino Nano / Arduino Pro Mini
+- STM32 Blue Pill
 - Polulu QTR-8RC Sensor Array
 - Motor Driver (TB6612FNG OR L298N)
 - N20 12V 600 RPM Motors
